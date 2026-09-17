@@ -1,6 +1,12 @@
-# Meus Projetos
+# Meu Portfólio de Projetos
 
-Repositório central para organizar projetos atuais, futuros e arquivados.
+Repositório central para organizar projetos atuais, futuros e arquivados, com um portfólio responsivo para apresentá-los.
+
+## Abrindo o portfólio
+
+Abra o arquivo `index.html` no navegador. Para desenvolvimento local, você também pode usar a extensão Live Server do VS Code.
+
+Edite seus dados pessoais diretamente em `index.html`. Para adicionar ou alterar projetos, atualize a lista `projects` no início de `script.js`.
 
 ## Estrutura
 
@@ -39,4 +45,3 @@ git commit -m "Adiciona nome-do-projeto"
 - Nunca salve senhas, chaves de API ou arquivos `.env` no Git.
 - Mova trabalhos concluídos ou pausados para `arquivo/`.
 - Ajuste o `.gitignore` quando um projeto usar ferramentas específicas.
-

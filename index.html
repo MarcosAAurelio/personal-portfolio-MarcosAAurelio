@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio de desenvolvimento — projetos, tecnologias e formas de contato."
+    />
+    <meta name="theme-color" content="#090b10" />
+    <title>Seu Nome — Desenvolvedor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-mark">SN</span>
+        <span>seunome.dev</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        </button>
+        <button class="icon-button menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="inicio">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span> Disponível para novos projetos</p>
+          <h1>Eu transformo ideias em <span>experiências digitais.</span></h1>
+          <p class="hero-description">
+            Olá, sou <strong>Seu Nome</strong> — desenvolvedor focado em criar produtos rápidos,
+            acessíveis e com interfaces que as pessoas gostam de usar.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projetos">Ver projetos <span>↘</span></a>
+            <a class="button button-ghost" href="mailto:voce@email.com">Vamos conversar</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Trecho de código decorativo">
+          <div class="code-window">
+            <div class="window-bar">
+              <div class="window-dots"><i></i><i></i><i></i></div>
+              <span>developer.ts</span>
+            </div>
+            <pre><code><span class="code-purple">const</span> developer = {
+  name: <span class="code-green">'Seu Nome'</span>,
+  role: <span class="code-green">'Full-stack Developer'</span>,
+  skills: [
+    <span class="code-green">'TypeScript'</span>,
+    <span class="code-green">'React'</span>,
+    <span class="code-green">'Node.js'</span>
+  ],
+  coffee: <span class="code-orange">true</span>,
+  build: () => <span class="code-green">'impact'</span>
+};</code></pre>
+          </div>
+          <div class="floating-badge badge-one">⌘ code</div>
+          <div class="floating-badge badge-two">● online</div>
+        </div>
+
+        <a class="scroll-hint" href="#sobre"><span>scroll</span><i></i></a>
+      </section>
+
+      <section class="about section" id="sobre">
+        <div class="section-heading reveal">
+          <p class="section-number">01 / SOBRE</p>
+          <h2>Código com propósito.<br />Design com intenção.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              Gosto de resolver problemas complexos com soluções simples. Do primeiro rascunho ao
+              deploy, combino tecnologia, experiência do usuário e atenção aos detalhes.
+            </p>
+            <p>
+              Estou sempre aprendendo, experimentando novas ferramentas e construindo coisas que
+              fazem diferença no mundo real.
+            </p>
+          </div>
+          <div class="stats reveal">
+            <div><strong data-count="12">12</strong><span>Projetos entregues</span></div>
+            <div><strong data-count="3">3</strong><span>Anos criando</span></div>
+            <div><strong data-count="100">100</strong><span>% curiosidade</span></div>
+          </div>
+        </div>
+        <div class="tech-list reveal" aria-label="Tecnologias">
+          <span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span>
+          <span>Python</span><span>PostgreSQL</span><span>Git</span><span>Figma</span>
+        </div>
+      </section>
+
+      <section class="projects section" id="projetos">
+        <div class="section-heading projects-heading reveal">
+          <div>
+            <p class="section-number">02 / PROJETOS</p>
+            <h2>Trabalhos selecionados.</h2>
+          </div>
+          <p>Uma seleção do que venho construindo, aprendendo e colocando no mundo.</p>
+        </div>
+        <div class="project-grid" id="project-grid"></div>
+      </section>
+
+      <section class="contact section" id="contato">
+        <div class="contact-card reveal">
+          <p class="section-number">03 / CONTATO</p>
+          <h2>Tem uma ideia?<br /><span>Vamos construir.</span></h2>
+          <p>Estou sempre aberto a bons desafios, colaborações e conversas sobre tecnologia.</p>
+          <a class="contact-link" href="mailto:voce@email.com">
+            <span>voce@email.com</span><i>↗</i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-left">
+        <span class="brand-mark">SN</span>
+        <p>Projetado e desenvolvido com cuidado.</p>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      </div>
+      <p>© <span id="year"></span> Seu Nome</p>
+    </footer>
+  </body>
+</html>
