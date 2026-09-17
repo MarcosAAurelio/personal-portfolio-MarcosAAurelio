@@ -90,6 +90,17 @@ button { color: inherit; font: inherit; }
 .nav a, .social-links a { color: var(--muted); font-size: 14px; transition: color .2s; }
 .nav a:hover, .social-links a:hover { color: var(--text); }
 .header-actions { display: flex; gap: 10px; }
+.language-toggle {
+  min-width: 46px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  font: 500 11px "DM Mono", monospace;
+  transition: border-color .2s, background .2s;
+}
+.language-toggle:hover { border-color: var(--accent); background: var(--surface); }
 .icon-button {
   display: grid;
   width: 40px;
@@ -161,10 +172,19 @@ h1 span, .contact-card h2 span { color: var(--accent); }
 .stats div { padding-left: 20px; border-left: 1px solid var(--line); }
 .stats strong { display: block; margin-bottom: 8px; font-size: clamp(34px, 4vw, 54px); letter-spacing: -.05em; }
 .stats strong::after { color: var(--accent); content: "+"; }
-.stats div:last-child strong::after { content: ""; }
+.stats div:nth-child(2) strong::after, .stats .text-stat::after { content: ""; }
 .stats span { color: var(--muted); font-size: 12px; }
 .tech-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 72px; }
 .tech-list span, .project-tags span { padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font: 11px "DM Mono", monospace; }
+
+.experience { border-top: 1px solid var(--line); }
+.experience-card { display: grid; grid-template-columns: minmax(180px, .4fr) 1fr; gap: 7vw; padding: 46px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.experience-meta { display: flex; flex-direction: column; gap: 12px; color: var(--muted); font: 11px "DM Mono", monospace; }
+.experience-content .company { color: var(--accent); font: 500 12px "DM Mono", monospace; letter-spacing: .1em; }
+.experience-content h3 { margin: 18px 0; font-size: clamp(26px, 3vw, 42px); letter-spacing: -.04em; }
+.experience-content > p:last-of-type { max-width: 760px; color: var(--muted); font-size: 17px; line-height: 1.75; }
+.experience-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.experience-tags span { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font: 11px "DM Mono", monospace; }
 
 .projects { width: 100%; max-width: none; padding-right: 5vw; padding-left: 5vw; background: var(--surface); }
 .projects-heading { align-items: flex-end; }
@@ -194,6 +214,9 @@ h1 span, .contact-card h2 span { color: var(--accent); }
 .contact-card > p:not(.section-number) { max-width: 540px; margin: 0 auto 42px; color: var(--muted); line-height: 1.7; }
 .contact-link { display: inline-flex; align-items: center; gap: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--text); font-size: clamp(16px, 2vw, 22px); }
 .contact-link i { color: var(--accent); font-style: normal; }
+.contact-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px; }
+.copy-email { padding: 11px 16px; color: var(--text); border: 1px solid var(--line); border-radius: 999px; background: transparent; cursor: pointer; font: 11px "DM Mono", monospace; transition: border-color .2s, background .2s; }
+.copy-email:hover { border-color: var(--accent); background: var(--surface); }
 footer { display: flex; padding: 30px 5vw; align-items: center; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
 .footer-left p { margin: 0; }.social-links { display: flex; gap: 22px; }
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
@@ -211,6 +234,7 @@ footer { display: flex; padding: 30px 5vw; align-items: center; justify-content:
   .hero-visual { width: min(600px, 96%); margin: auto; }
   .scroll-hint { display: none; }
   .about-grid { grid-template-columns: 1fr; }
+  .experience-card { grid-template-columns: 1fr; gap: 36px; }
   .project-card, .project-card:first-child, .project-card:nth-child(2) { grid-column: span 12; }
 }
 

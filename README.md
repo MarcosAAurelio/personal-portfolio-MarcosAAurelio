@@ -6,7 +6,9 @@ Repositório central para organizar projetos atuais, futuros e arquivados, com u
 
 Abra o arquivo `index.html` no navegador. Para desenvolvimento local, você também pode usar a extensão Live Server do VS Code.
 
-Edite seus dados pessoais diretamente em `index.html`. Para adicionar ou alterar projetos, atualize a lista `projects` no início de `script.js`.
+Os dados pessoais e profissionais ficam em `index.html`. Para adicionar ou alterar projetos, atualize a lista `projects` no início de `script.js` e forneça o texto nos dois idiomas.
+
+O portfólio possui português e inglês, temas claro e escuro, navegação responsiva e botão para copiar o e-mail.
 
 ## Estrutura
 

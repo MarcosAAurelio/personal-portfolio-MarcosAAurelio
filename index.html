@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfólio de desenvolvimento — projetos, tecnologias e formas de contato."
+      content="Portfólio de Marcos Aurélio — estudante de Engenharia de Software, projetos, experiência e contato."
     />
+    <meta name="author" content="Marcos Aurélio" />
     <meta name="theme-color" content="#090b10" />
-    <title>Seu Nome — Desenvolvedor</title>
+    <title>Marcos Aurélio — Engenharia de Software</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,17 +23,19 @@
     <div class="noise" aria-hidden="true"></div>
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Voltar ao início">
-        <span class="brand-mark">SN</span>
-        <span>seunome.dev</span>
+        <span class="brand-mark">MA</span>
+        <span>marcos.dev</span>
       </a>
 
       <nav class="nav" aria-label="Navegação principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
+        <a href="#sobre" data-i18n="navAbout">Sobre</a>
+        <a href="#experiencia" data-i18n="navExperience">Experiência</a>
+        <a href="#projetos" data-i18n="navProjects">Projetos</a>
+        <a href="#contato" data-i18n="navContact">Contato</a>
       </nav>
 
       <div class="header-actions">
+        <button class="language-toggle" type="button" aria-label="Switch to English">EN</button>
         <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">
           <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
           <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
@@ -46,15 +49,15 @@
     <main>
       <section class="hero section" id="inicio">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="status-dot"></span> Disponível para novos projetos</p>
-          <h1>Eu transformo ideias em <span>experiências digitais.</span></h1>
-          <p class="hero-description">
-            Olá, sou <strong>Seu Nome</strong> — desenvolvedor focado em criar produtos rápidos,
-            acessíveis e com interfaces que as pessoas gostam de usar.
+          <p class="eyebrow"><span class="status-dot"></span> <span data-i18n="availability">Aberto a oportunidades em desenvolvimento</span></p>
+          <h1 data-i18n-html="heroTitle">Software bem pensado, <span>problemas bem resolvidos.</span></h1>
+          <p class="hero-description" data-i18n-html="heroDescription">
+            Olá, sou <strong>Marcos Aurélio</strong> — estudante de Engenharia de Software que une
+            experiência corporativa em TI à vontade de construir soluções úteis e eficientes.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#projetos">Ver projetos <span>↘</span></a>
-            <a class="button button-ghost" href="mailto:voce@email.com">Vamos conversar</a>
+            <a class="button button-primary" href="#projetos"><span data-i18n="viewProjects">Ver projetos</span> <span>↘</span></a>
+            <a class="button button-ghost" href="mailto:marcosrtaurelio23@gmail.com" data-i18n="letsTalk">Vamos conversar</a>
           </div>
         </div>
 
@@ -65,12 +68,11 @@
               <span>developer.ts</span>
             </div>
             <pre><code><span class="code-purple">const</span> developer = {
-  name: <span class="code-green">'Seu Nome'</span>,
-  role: <span class="code-green">'Full-stack Developer'</span>,
+  name: <span class="code-green">'Marcos Aurélio'</span>,
+  role: <span class="code-green">'Software Engineering'</span>,
   skills: [
-    <span class="code-green">'TypeScript'</span>,
-    <span class="code-green">'React'</span>,
-    <span class="code-green">'Node.js'</span>
+    <span class="code-green">'Java'</span>, <span class="code-green">'C'</span>,
+    <span class="code-green">'Python'</span>, <span class="code-green">'SQL'</span>
   ],
   coffee: <span class="code-orange">true</span>,
   build: () => <span class="code-green">'impact'</span>
@@ -85,65 +87,81 @@
 
       <section class="about section" id="sobre">
         <div class="section-heading reveal">
-          <p class="section-number">01 / SOBRE</p>
-          <h2>Código com propósito.<br />Design com intenção.</h2>
+          <p class="section-number" data-i18n="aboutEyebrow">01 / SOBRE</p>
+          <h2 data-i18n-html="aboutTitle">Curioso por natureza.<br />Analítico na prática.</h2>
         </div>
         <div class="about-grid">
           <div class="about-copy reveal">
-            <p>
-              Gosto de resolver problemas complexos com soluções simples. Do primeiro rascunho ao
-              deploy, combino tecnologia, experiência do usuário e atenção aos detalhes.
-            </p>
-            <p>
-              Estou sempre aprendendo, experimentando novas ferramentas e construindo coisas que
-              fazem diferença no mundo real.
-            </p>
+            <p data-i18n="aboutP1">Sou estudante de Engenharia de Software na Universidade Católica de Brasília, com experiência prática corporativa como Analista de Suporte N1 na Viveo.</p>
+            <p data-i18n="aboutP2">Tenho perfil analítico e criativo, adaptação rápida a novas tecnologias e interesse especial em backend, segurança da informação e desenvolvimento de software.</p>
           </div>
           <div class="stats reveal">
-            <div><strong data-count="12">12</strong><span>Projetos entregues</span></div>
-            <div><strong data-count="3">3</strong><span>Anos criando</span></div>
-            <div><strong data-count="100">100</strong><span>% curiosidade</span></div>
+            <div><strong data-count="3">3</strong><span data-i18n="statProjects">Projetos em destaque</span></div>
+            <div><strong data-count="4">4º</strong><span data-i18n="statSemester">Semestre da graduação</span></div>
+            <div><strong class="text-stat">B2</strong><span data-i18n="statEnglish">Inglês</span></div>
           </div>
         </div>
         <div class="tech-list reveal" aria-label="Tecnologias">
-          <span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span>
-          <span>Python</span><span>PostgreSQL</span><span>Git</span><span>Figma</span>
+          <span>Java</span><span>C</span><span>C#</span><span>Python</span>
+          <span>SQL</span><span>JavaFX</span><span>Spring Boot</span><span>Git & GitHub</span>
         </div>
+      </section>
+
+      <section class="experience section" id="experiencia">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-number" data-i18n="experienceEyebrow">02 / EXPERIÊNCIA</p>
+            <h2 data-i18n="experienceTitle">Onde tecnologia encontra pessoas.</h2>
+          </div>
+        </div>
+        <article class="experience-card reveal">
+          <div class="experience-meta">
+            <span data-i18n="experiencePeriod">AGO 2025 — AGO 2026</span>
+            <span>BRASÍLIA, DF</span>
+          </div>
+          <div class="experience-content">
+            <p class="company">VIVEO · CM HOSPITALAR</p>
+            <h3 data-i18n="experienceRole">Jovem Aprendiz em TI · Analista de Suporte N1</h3>
+            <p data-i18n="experienceDescription">Atendimento presencial e remoto, triagem e acompanhamento de chamados, diagnóstico de incidentes e suporte à configuração de estações de trabalho, sistemas e periféricos.</p>
+            <div class="experience-tags"><span>ITSM</span><span>Suporte N1</span><span>Hardware</span><span>Software</span></div>
+          </div>
+        </article>
       </section>
 
       <section class="projects section" id="projetos">
         <div class="section-heading projects-heading reveal">
           <div>
-            <p class="section-number">02 / PROJETOS</p>
-            <h2>Trabalhos selecionados.</h2>
+            <p class="section-number" data-i18n="projectsEyebrow">03 / PROJETOS</p>
+            <h2 data-i18n="projectsTitle">Projetos que contam minha evolução.</h2>
           </div>
-          <p>Uma seleção do que venho construindo, aprendendo e colocando no mundo.</p>
+          <p data-i18n="projectsDescription">Aplicações acadêmicas criadas para transformar conceitos de engenharia de software em soluções que funcionam.</p>
         </div>
         <div class="project-grid" id="project-grid"></div>
       </section>
 
       <section class="contact section" id="contato">
         <div class="contact-card reveal">
-          <p class="section-number">03 / CONTATO</p>
-          <h2>Tem uma ideia?<br /><span>Vamos construir.</span></h2>
-          <p>Estou sempre aberto a bons desafios, colaborações e conversas sobre tecnologia.</p>
-          <a class="contact-link" href="mailto:voce@email.com">
-            <span>voce@email.com</span><i>↗</i>
-          </a>
+          <p class="section-number" data-i18n="contactEyebrow">04 / CONTATO</p>
+          <h2 data-i18n-html="contactTitle">Vamos tirar uma ideia<br /><span>do papel?</span></h2>
+          <p data-i18n="contactDescription">Estou aberto a estágios, oportunidades em desenvolvimento de software e boas conversas sobre tecnologia.</p>
+          <div class="contact-actions">
+            <a class="contact-link" href="mailto:marcosrtaurelio23@gmail.com"><span>marcosrtaurelio23@gmail.com</span><i>↗</i></a>
+            <button class="copy-email" type="button" data-email="marcosrtaurelio23@gmail.com" data-i18n="copyEmail">Copiar e-mail</button>
+          </div>
         </div>
       </section>
     </main>
 
     <footer>
       <div class="footer-left">
-        <span class="brand-mark">SN</span>
-        <p>Projetado e desenvolvido com cuidado.</p>
+        <span class="brand-mark">MA</span>
+        <p data-i18n="footerText">Projetado e desenvolvido com curiosidade.</p>
       </div>
       <div class="social-links">
-        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
-        <a href="https://linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/MarcosAAurelio" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://linkedin.com/in/eu-marcosaurelio-dev" target="_blank" rel="noreferrer">LinkedIn ↗</a>
       </div>
-      <p>© <span id="year"></span> Seu Nome</p>
+      <p>© <span id="year"></span> Marcos Aurélio</p>
     </footer>
   </body>
 </html>
