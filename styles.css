@@ -212,8 +212,11 @@ h1 span, .contact-card h2 span { color: var(--accent); }
 .contact-link { display: inline-flex; align-items: center; gap: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--text); font-size: clamp(16px, 2vw, 22px); }
 .contact-link i { color: var(--accent); font-style: normal; }
 .contact-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px; }
-.copy-email { padding: 11px 16px; color: var(--text); border: 1px solid var(--line); border-radius: 999px; background: transparent; cursor: pointer; font: 11px "DM Mono", monospace; transition: border-color .2s, background .2s; }
+.copy-email, .whatsapp-link { min-height: 40px; padding: 10px 16px; color: var(--text); border: 1px solid var(--line); border-radius: 999px; background: transparent; cursor: pointer; font: 11px "DM Mono", monospace; transition: border-color .2s, background .2s, transform .2s; }
 .copy-email:hover { border-color: var(--accent); background: var(--surface); }
+.whatsapp-link { display: inline-flex; align-items: center; gap: 9px; color: #071109; border-color: #25d366; background: #25d366; }
+.whatsapp-link:hover { background: #58e184; transform: translateY(-2px); }
+.whatsapp-link svg { width: 17px; height: 17px; fill: currentColor; }
 footer { display: flex; padding: 30px 5vw; align-items: center; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
 .footer-left p { margin: 0; }.social-links { display: flex; gap: 22px; }
 .reveal { opacity: 0; transform: translate3d(0, 22px, 0); transition: opacity .55s ease, transform .55s ease; }

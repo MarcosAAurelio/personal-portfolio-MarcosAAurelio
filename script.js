@@ -80,7 +80,7 @@ const translations = {
     projectsDescription: "Aplicações acadêmicas criadas para transformar conceitos de engenharia de software em soluções que funcionam.",
     contactEyebrow: "04 / CONTATO", contactTitle: "Vamos tirar uma ideia<br /><span>do papel?</span>",
     contactDescription: "Estou aberto a estágios, oportunidades em desenvolvimento de software e boas conversas sobre tecnologia.",
-    copyEmail: "Copiar e-mail", copiedEmail: "E-mail copiado!", footerText: "Projetado e desenvolvido com curiosidade.",
+    copyEmail: "Copiar e-mail", copiedEmail: "E-mail copiado!", whatsapp: "Falar pelo WhatsApp", footerText: "Projetado e desenvolvido com curiosidade.",
   },
   en: {
     navAbout: "About", navExperience: "Experience", navProjects: "Projects", navContact: "Contact",
@@ -99,7 +99,7 @@ const translations = {
     projectsDescription: "Academic applications built to turn software engineering concepts into solutions that work.",
     contactEyebrow: "04 / CONTACT", contactTitle: "Let's bring an idea<br /><span>to life?</span>",
     contactDescription: "I'm open to internships, software development opportunities and good conversations about technology.",
-    copyEmail: "Copy email", copiedEmail: "Email copied!", footerText: "Designed and developed with curiosity.",
+    copyEmail: "Copy email", copiedEmail: "Email copied!", whatsapp: "Chat on WhatsApp", footerText: "Designed and developed with curiosity.",
   },
 };
 
@@ -117,6 +117,10 @@ function applyLanguage(language) {
   const languageButton = document.querySelector(".language-toggle");
   languageButton.textContent = language === "pt" ? "EN" : "PT";
   languageButton.setAttribute("aria-label", language === "pt" ? "Switch to English" : "Mudar para português");
+  const whatsappMessage = language === "pt"
+    ? "Olá, Marcos! Vi seu portfólio e gostaria de conversar sobre uma oportunidade."
+    : "Hi Marcos! I saw your portfolio and would like to talk about an opportunity.";
+  document.querySelector(".whatsapp-link").href = `https://wa.me/5561991594621?text=${encodeURIComponent(whatsappMessage)}`;
   localStorage.setItem("portfolio-language", language);
   renderProjects(language);
 }
