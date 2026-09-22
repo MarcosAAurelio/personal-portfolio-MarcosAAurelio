@@ -68,7 +68,7 @@ const projects = [
       pt: "Aplicação Java para leitura de CSV, cálculo de pontuação, saldo de gols e estatísticas de desempenho.",
       en: "Java application for reading CSV files and calculating points, goal difference and performance statistics.",
     },
-    tags: "Java · CSV · Algoritmos", symbol: "BR", color: "linear-gradient(135deg, #235743, #0c2a24)",
+    tags: "Java · CSV · Algoritmos", icon: "chart", color: "linear-gradient(135deg, #235743, #0c2a24)",
   },
   {
     title: { pt: "Aplicação Desktop", en: "Desktop Application" },
@@ -76,7 +76,7 @@ const projects = [
       pt: "Sistema desktop modular com interface JavaFX, padrão MVC e manipulação de eventos.",
       en: "Modular desktop application with a JavaFX interface, MVC pattern and event handling.",
     },
-    tags: "Java · JavaFX · MVC", symbol: "JFX", color: "linear-gradient(135deg, #51436f, #262139)",
+    tags: "Java · JavaFX · MVC", icon: "laptop", color: "linear-gradient(135deg, #51436f, #262139)",
   },
   {
     title: { pt: "Conversor de Moedas", en: "Currency Converter" },
@@ -84,7 +84,7 @@ const projects = [
       pt: "Utilitário em C com estruturas de dados, alocação dinâmica, ponteiros e algoritmos.",
       en: "C utility using data structures, dynamic allocation, pointers and algorithms.",
     },
-    tags: "C · Estruturas de Dados", symbol: "C$", color: "linear-gradient(135deg, #814c47, #3a2427)",
+    tags: "C · Estruturas de Dados", icon: "exchange", color: "linear-gradient(135deg, #814c47, #3a2427)",
   },
 ];
 
@@ -145,9 +145,15 @@ function renderProjects() {
     const art = document.createElement("div");
     art.className = "project-art";
     art.style.setProperty("--project-bg", project.color);
-    const symbol = document.createElement("span");
-    symbol.textContent = project.symbol;
-    art.append(symbol);
+    art.setAttribute("aria-hidden", "true");
+    const iconFrame = document.createElement("span");
+    iconFrame.className = "project-art-icon";
+    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttribute("href", `#icon-${project.icon}`);
+    icon.append(use);
+    iconFrame.append(icon);
+    art.append(iconFrame);
     const title = document.createElement("h3");
     title.textContent = project.title[language];
     const description = document.createElement("p");
@@ -192,29 +198,43 @@ function applyLanguage(next) {
   localStorage.setItem("portfolio-language", language);
 }
 
+let panelTransitionTimer;
+
 function activatePanel(id, updateHash = true) {
   if (!panels.some((panel) => panel.id === id)) id = "sobre";
 
   const activePanel = panels.find((panel) => panel.id === id);
+  const outgoingPanel = panels.find((panel) => panel.classList.contains("visible"))
+    || panels.find((panel) => panel.classList.contains("is-exit"));
+  const shouldAnimateExit = outgoingPanel?.classList.contains("visible")
+    && outgoingPanel !== activePanel
+    && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  window.clearTimeout(panelTransitionTimer);
   panels.forEach((panel) => {
-    const isActive = panel.id === id;
-    panel.hidden = false;
-    panel.classList.remove("is-exit");
-
-    if (isActive) {
-      panel.classList.add("visible");
-      panel.style.pointerEvents = "auto";
-    } else {
-      panel.classList.remove("visible");
-      panel.classList.add("is-exit");
-      panel.style.pointerEvents = "none";
-      window.setTimeout(() => {
-        panel.hidden = true;
-        panel.classList.remove("is-exit");
-      }, 420);
-    }
+    if (panel === outgoingPanel) return;
+    panel.hidden = true;
+    panel.classList.remove("visible", "is-exit");
   });
+
+  const showActivePanel = () => {
+    if (outgoingPanel && outgoingPanel !== activePanel) {
+      outgoingPanel.hidden = true;
+      outgoingPanel.classList.remove("is-exit");
+    }
+    activePanel.hidden = false;
+    activePanel.classList.remove("is-exit");
+    activePanel.getBoundingClientRect();
+    activePanel.classList.add("visible");
+  };
+
+  if (shouldAnimateExit) {
+    outgoingPanel.classList.remove("visible");
+    outgoingPanel.classList.add("is-exit");
+    panelTransitionTimer = window.setTimeout(showActivePanel, 180);
+  } else {
+    showActivePanel();
+  }
 
   tabLinks.forEach((link) => {
     const active = link.dataset.tab === id;
