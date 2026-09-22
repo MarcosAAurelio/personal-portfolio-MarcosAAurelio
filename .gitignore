@@ -32,3 +32,6 @@ target/
 *.tmp
 *.temp
 
+# Prévias e perfis temporários de verificação visual
+.chrome-*/
+preview-*.png

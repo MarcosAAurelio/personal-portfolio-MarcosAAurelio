@@ -1,49 +1,43 @@
-# Meu Portfólio de Projetos
+# Marcos Aurélio — Portfólio
 
-Repositório central para organizar projetos atuais, futuros e arquivados, com um portfólio responsivo para apresentá-los.
+**Estudante de Engenharia de Software · Brasília, DF**
 
-## Abrindo o portfólio
+Sou estudante de Engenharia de Software na Universidade Católica de Brasília. Tenho experiência em suporte de TI e interesse em desenvolvimento de software, backend e segurança da informação. Este portfólio reúne um pouco da minha trajetória, das tecnologias que estudo e dos projetos que venho construindo.
 
-Abra o arquivo `index.html` no navegador. Para desenvolvimento local, você também pode usar a extensão Live Server do VS Code.
+![Página inicial do portfólio em tema escuro](assets/screenshots/01-sobre-escuro.png)
 
-Os dados pessoais e profissionais ficam em `index.html`. Para adicionar ou alterar projetos, atualize a lista `projects` no início de `script.js` e forneça o texto nos dois idiomas.
+## Meu portfólio
 
-O portfólio possui português e inglês, temas claro e escuro, navegação responsiva e botão para copiar o e-mail.
+Uma experiência responsiva com quatro áreas: **Sobre**, **Experiência**, **Projetos** e **Contato**. O conteúdo abre em português e também pode ser visto em inglês. A interface oferece temas escuro e claro e salva as preferências no navegador.
 
-## Estrutura
+## Galeria
 
-```text
-projetos/     Projetos em andamento
-modelos/      Estruturas e arquivos reutilizáveis
-arquivo/      Projetos concluídos ou pausados
-docs/         Anotações e documentação geral
-```
+| Experiência | Projetos |
+| :---: | :---: |
+| ![Formação e experiência profissional](assets/screenshots/02-experiencia.png) | ![Projetos acadêmicos](assets/screenshots/03-projetos.png) |
 
-Cada projeto deve ficar em sua própria pasta dentro de `projetos/`:
+| Tema claro e contato | Versão em inglês |
+| :---: | :---: |
+| ![Página de contato no tema claro](assets/screenshots/04-contato-claro.png) | ![Página Sobre em inglês](assets/screenshots/06-about-english.png) |
 
-```text
-projetos/
-└── nome-do-projeto/
-    ├── README.md
-    ├── src/
-    └── ...
-```
+<p align="center">
+  <img src="assets/screenshots/05-sobre-claro-mobile.png" alt="Portfólio em tela estreita e tema claro" width="300">
+  <br>
+  <em>Visualização em tela estreita</em>
+</p>
 
-## Adicionando um projeto
+## Projetos em destaque
 
-1. Crie uma pasta: `mkdir projetos/nome-do-projeto`.
-2. Adicione um `README.md` explicando objetivo, tecnologias e como executar.
-3. Salve os arquivos do projeto nessa pasta.
-4. Registre a mudança no Git:
+- **Análise do Brasileirão:** aplicação Java para leitura de CSV e cálculo de pontuação, saldo de gols e estatísticas de desempenho.
+- **Aplicação Desktop:** sistema modular em JavaFX com padrão MVC e manipulação de eventos.
+- **Conversor de Moedas:** utilitário em C que explora estruturas de dados, ponteiros, alocação dinâmica e algoritmos.
 
-```bash
-git add .
-git commit -m "Adiciona nome-do-projeto"
-```
+## Tecnologias e interesses
 
-## Boas práticas
+**Java · C · C# · Python · SQL · JavaFX · Spring Boot · Git & GitHub**
 
-- Use nomes de pastas curtos, descritivos e sem espaços.
-- Nunca salve senhas, chaves de API ou arquivos `.env` no Git.
-- Mova trabalhos concluídos ou pausados para `arquivo/`.
-- Ajuste o `.gitignore` quando um projeto usar ferramentas específicas.
+Tenho interesse especial em backend, segurança da informação e soluções que facilitem a vida das pessoas. Meu nível de inglês é **B2**.
+
+## Contato
+
+[E-mail](mailto:marcosrtaurelio23@gmail.com) · [LinkedIn](https://linkedin.com/in/eu-marcosaurelio-dev) · [GitHub](https://github.com/MarcosAAurelio) · [WhatsApp](https://wa.me/5561991594621)

@@ -1,183 +1,207 @@
+const translations = {
+  pt: {
+    role: "Engenharia de Software", showContacts: "Mostrar contatos", hideContacts: "Ocultar contatos",
+    emailLabel: "E-MAIL", phoneLabel: "TELEFONE", locationLabel: "LOCALIZAÇÃO", educationLabel: "FORMAÇÃO",
+    location: "Brasília, DF, Brasil", university: "Universidade Católica de Brasília",
+    navAbout: "Sobre", navExperience: "Experiência", navProjects: "Projetos", navContact: "Contato",
+    aboutTitle: "Sobre mim",
+    aboutP1: "Olá! Sou Marcos Aurélio, estudante de Engenharia de Software na Universidade Católica de Brasília. Gosto de transformar ideias em soluções úteis, com atenção à lógica, à experiência de uso e aos detalhes.",
+    aboutP2: "Minha experiência em suporte de TI na Viveo me aproximou dos desafios reais das pessoas. Hoje, sigo aprofundando meus conhecimentos em desenvolvimento de software, backend e segurança da informação.",
+    whatIDo: "O que eu faço", skillsTitle: "Tecnologias",
+    featureDevTitle: "Desenvolvimento de software", featureDevText: "Projetos em Java, C, C# e Python, com foco em soluções claras e funcionais.",
+    featureSupportTitle: "Suporte de TI", featureSupportText: "Diagnóstico de incidentes, atendimento e acompanhamento de chamados.",
+    featureDataTitle: "Dados e lógica", featureDataText: "Manipulação de dados, SQL e algoritmos para resolver problemas de forma estruturada.",
+    featureLearnTitle: "Aprendizado contínuo", featureLearnText: "Estudo de backend, segurança da informação e boas práticas de engenharia.",
+    experienceTitle: "Experiência", educationTitle: "Formação", degree: "Engenharia de Software",
+    degreeDescription: "4º semestre da graduação, com estudos em programação, estruturas de dados e desenvolvimento de sistemas.",
+    workTitle: "Experiência profissional", experienceRole: "Jovem Aprendiz em TI · Analista de Suporte N1",
+    experiencePeriod: "Ago 2025 — Ago 2026",
+    experienceDescription: "Atendimento presencial e remoto, triagem e acompanhamento de chamados, diagnóstico de incidentes e suporte à configuração de estações de trabalho, sistemas e periféricos.",
+    focusTitle: "Áreas de interesse", security: "Segurança da informação", softwareDevelopment: "Desenvolvimento de software",
+    languagesTitle: "Idiomas", englishLevel: "Inglês · B2",
+    projectsTitle: "Projetos", projectsLead: "Uma seleção de trabalhos acadêmicos que mostram meu aprendizado em programação e resolução de problemas.",
+    allGitHub: "Ver meu perfil no GitHub",
+    contactTitle: "Contato", contactLead: "Estou aberto a estágios, oportunidades em desenvolvimento de software e conversas sobre tecnologia. Vamos conversar?",
+    getInTouch: "Entre em contato", contactPrompt: "Escolha o canal que preferir. Responderei assim que possível.",
+    sendEmail: "Enviar e-mail", whatsapp: "Conversar pelo WhatsApp", copyEmail: "Copiar e-mail", copiedEmail: "E-mail copiado!",
+    copyFailed: "Não foi possível copiar", lightTheme: "Ativar tema claro", darkTheme: "Ativar tema escuro",
+    projectType: "Projeto acadêmico",
+  },
+  en: {
+    role: "Software Engineering", showContacts: "Show contacts", hideContacts: "Hide contacts",
+    emailLabel: "EMAIL", phoneLabel: "PHONE", locationLabel: "LOCATION", educationLabel: "EDUCATION",
+    location: "Brasília, DF, Brazil", university: "Catholic University of Brasília",
+    navAbout: "About", navExperience: "Experience", navProjects: "Projects", navContact: "Contact",
+    aboutTitle: "About me",
+    aboutP1: "Hi! I'm Marcos Aurélio, a Software Engineering student at the Catholic University of Brasília. I enjoy turning ideas into useful solutions, with attention to logic, user experience and detail.",
+    aboutP2: "My IT support experience at Viveo brought me closer to people's real challenges. I continue to deepen my knowledge of software development, backend and information security.",
+    whatIDo: "What I do", skillsTitle: "Technologies",
+    featureDevTitle: "Software development", featureDevText: "Projects in Java, C, C# and Python, focused on clear, functional solutions.",
+    featureSupportTitle: "IT support", featureSupportText: "Incident diagnosis, user support and ticket follow-up.",
+    featureDataTitle: "Data and logic", featureDataText: "Data handling, SQL and algorithms to solve problems in a structured way.",
+    featureLearnTitle: "Continuous learning", featureLearnText: "Studying backend, information security and sound engineering practices.",
+    experienceTitle: "Experience", educationTitle: "Education", degree: "Software Engineering",
+    degreeDescription: "Fourth semester of the degree, studying programming, data structures and systems development.",
+    workTitle: "Professional experience", experienceRole: "IT Apprentice · Level 1 Support Analyst",
+    experiencePeriod: "Aug 2025 — Aug 2026",
+    experienceDescription: "On-site and remote support, ticket triage and follow-up, incident diagnosis, and help configuring workstations, systems and peripherals.",
+    focusTitle: "Areas of interest", security: "Information security", softwareDevelopment: "Software development",
+    languagesTitle: "Languages", englishLevel: "English · B2",
+    projectsTitle: "Projects", projectsLead: "A selection of academic work showing my progress in programming and problem solving.",
+    allGitHub: "Visit my GitHub profile",
+    contactTitle: "Contact", contactLead: "I'm open to internships, software development opportunities and conversations about technology. Let's talk.",
+    getInTouch: "Get in touch", contactPrompt: "Choose your preferred channel. I'll respond as soon as I can.",
+    sendEmail: "Send email", whatsapp: "Chat on WhatsApp", copyEmail: "Copy email", copiedEmail: "Email copied!",
+    copyFailed: "Could not copy", lightTheme: "Switch to light theme", darkTheme: "Switch to dark theme",
+    projectType: "Academic project",
+  },
+};
+
 const projects = [
   {
-    title: { pt: "Análise do Brasileirão", en: "Brasileirão Data Analysis" },
+    title: { pt: "Análise do Brasileirão", en: "Brasileirão Analysis" },
     description: {
       pt: "Aplicação Java para leitura de CSV, cálculo de pontuação, saldo de gols e estatísticas de desempenho.",
-      en: "Java application for CSV parsing, score calculation, goal difference and performance statistics.",
+      en: "Java application for reading CSV files and calculating points, goal difference and performance statistics.",
     },
-    tags: ["Java", "CSV", "Algoritmos"],
-    symbol: "BR/",
-    color: "linear-gradient(135deg, #14532d, #16a34a)",
-    url: "https://github.com/MarcosAAurelio",
+    tags: "Java · CSV · Algoritmos", symbol: "BR", color: "linear-gradient(135deg, #235743, #0c2a24)",
   },
   {
     title: { pt: "Aplicação Desktop", en: "Desktop Application" },
     description: {
-      pt: "Sistema desktop modular com interface JavaFX, padrão MVC e manipulação de eventos em tempo real.",
-      en: "Modular desktop system with a JavaFX interface, MVC pattern and real-time event handling.",
+      pt: "Sistema desktop modular com interface JavaFX, padrão MVC e manipulação de eventos.",
+      en: "Modular desktop application with a JavaFX interface, MVC pattern and event handling.",
     },
-    tags: ["Java", "JavaFX", "MVC"],
-    symbol: "JFX",
-    color: "linear-gradient(135deg, #4c1d95, #8b5cf6)",
-    url: "https://github.com/MarcosAAurelio",
+    tags: "Java · JavaFX · MVC", symbol: "JFX", color: "linear-gradient(135deg, #51436f, #262139)",
   },
   {
     title: { pt: "Conversor de Moedas", en: "Currency Converter" },
     description: {
-      pt: "Utilitário em C com estruturas de dados, alocação dinâmica, ponteiros e algoritmos de busca e ordenação.",
-      en: "C utility using data structures, dynamic allocation, pointers, searching and sorting algorithms.",
+      pt: "Utilitário em C com estruturas de dados, alocação dinâmica, ponteiros e algoritmos.",
+      en: "C utility using data structures, dynamic allocation, pointers and algorithms.",
     },
-    tags: ["C", "Estruturas de Dados", "Algoritmos"],
-    symbol: "C$",
-    color: "linear-gradient(135deg, #9f1239, #f43f5e)",
-    url: "https://github.com/MarcosAAurelio",
+    tags: "C · Estruturas de Dados", symbol: "C$", color: "linear-gradient(135deg, #814c47, #3a2427)",
   },
 ];
 
-const grid = document.querySelector("#project-grid");
+const root = document.documentElement;
+const languageButton = document.querySelector(".language-toggle");
+const themeButton = document.querySelector(".theme-toggle");
+const expandButton = document.querySelector(".profile-expand");
+const details = document.querySelector(".profile-details");
+const tabLinks = [...document.querySelectorAll("[data-tab]")];
+const panels = [...document.querySelectorAll(".panel")];
+const copyButton = document.querySelector(".copy-email");
+const previewOptions = new URLSearchParams(location.search);
+let language = previewOptions.get("lang") === "en" ? "en" : previewOptions.get("lang") === "pt"
+  ? "pt" : localStorage.getItem("portfolio-language") === "en" ? "en" : "pt";
+let theme = previewOptions.get("theme") === "light" ? "light" : previewOptions.get("theme") === "dark"
+  ? "dark" : localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
 
-function renderProjects(language) {
-  grid.innerHTML = "";
-  projects.forEach((project, index) => {
-  const article = document.createElement("article");
-  article.className = "project-card reveal";
-  article.style.setProperty("--project-bg", project.color);
-  article.innerHTML = `
-    <a href="${project.url}" target="_blank" rel="noreferrer" aria-label="${language === "pt" ? "Abrir projeto" : "Open project"} ${project.title[language]}">
-      <div class="project-visual"><span class="project-symbol">${project.symbol}</span></div>
-      <div class="project-content">
-        <div class="project-top">
-          <div>
-            <span class="project-index">${language === "pt" ? "PROJETO" : "PROJECT"} 0${index + 1}</span>
-            <h3>${project.title[language]}</h3>
-          </div>
-          <span class="project-arrow">↗</span>
-        </div>
-        <p>${project.description[language]}</p>
-        <div class="project-tags">${project.tags.map((tag) => `<span>${tag}</span>`).join("")}</div>
-      </div>
-    </a>`;
-  grid.appendChild(article);
-  observer.observe(article);
-  });
+function renderProjects() {
+  const grid = document.querySelector("#project-grid");
+  grid.replaceChildren(...projects.map((project) => {
+    const article = document.createElement("article");
+    article.className = "project-card";
+    const art = document.createElement("div");
+    art.className = "project-art";
+    art.style.setProperty("--project-bg", project.color);
+    const symbol = document.createElement("span");
+    symbol.textContent = project.symbol;
+    art.append(symbol);
+    const title = document.createElement("h3");
+    title.textContent = project.title[language];
+    const description = document.createElement("p");
+    description.textContent = project.description[language];
+    const tags = document.createElement("div");
+    tags.className = "project-tags";
+    tags.textContent = project.tags;
+    article.append(art, title, description, tags);
+    return article;
+  }));
 }
 
-const translations = {
-  pt: {
-    navAbout: "Sobre", navExperience: "Experiência", navProjects: "Projetos", navContact: "Contato",
-    availability: "Aberto a oportunidades em desenvolvimento",
-    heroTitle: "Software bem pensado, <span>problemas bem resolvidos.</span>",
-    heroDescription: "Olá, sou <strong>Marcos Aurélio</strong> — estudante de Engenharia de Software que une experiência corporativa em TI à vontade de construir soluções úteis e eficientes.",
-    viewProjects: "Ver projetos", letsTalk: "Vamos conversar", aboutEyebrow: "01 / SOBRE",
-    aboutTitle: "Curioso por natureza.<br />Analítico na prática.",
-    aboutP1: "Sou estudante de Engenharia de Software na Universidade Católica de Brasília, com experiência prática corporativa como Analista de Suporte N1 na Viveo.",
-    aboutP2: "Tenho perfil analítico e criativo, adaptação rápida a novas tecnologias e interesse especial em backend, segurança da informação e desenvolvimento de software.",
-    statProjects: "Projetos em destaque", statSemester: "Semestre da graduação", statEnglish: "Inglês",
-    experienceEyebrow: "02 / EXPERIÊNCIA", experienceTitle: "Onde tecnologia encontra pessoas.",
-    experiencePeriod: "AGO 2025 — AGO 2026", experienceRole: "Jovem Aprendiz em TI · Analista de Suporte N1",
-    experienceDescription: "Atendimento presencial e remoto, triagem e acompanhamento de chamados, diagnóstico de incidentes e suporte à configuração de estações de trabalho, sistemas e periféricos.",
-    projectsEyebrow: "03 / PROJETOS", projectsTitle: "Projetos que contam minha evolução.",
-    projectsDescription: "Aplicações acadêmicas criadas para transformar conceitos de engenharia de software em soluções que funcionam.",
-    contactEyebrow: "04 / CONTATO", contactTitle: "Vamos tirar uma ideia<br /><span>do papel?</span>",
-    contactDescription: "Estou aberto a estágios, oportunidades em desenvolvimento de software e boas conversas sobre tecnologia.",
-    copyEmail: "Copiar e-mail", copiedEmail: "E-mail copiado!", whatsapp: "Falar pelo WhatsApp", footerText: "Projetado e desenvolvido com curiosidade.",
-  },
-  en: {
-    navAbout: "About", navExperience: "Experience", navProjects: "Projects", navContact: "Contact",
-    availability: "Open to software development opportunities",
-    heroTitle: "Thoughtful software, <span>well-solved problems.</span>",
-    heroDescription: "Hi, I'm <strong>Marcos Aurélio</strong> — a Software Engineering student combining hands-on corporate IT experience with the drive to build useful, efficient solutions.",
-    viewProjects: "View projects", letsTalk: "Let's talk", aboutEyebrow: "01 / ABOUT",
-    aboutTitle: "Curious by nature.<br />Analytical in practice.",
-    aboutP1: "I study Software Engineering at the Catholic University of Brasília and have hands-on corporate experience as an N1 Support Analyst at Viveo.",
-    aboutP2: "I have an analytical and creative mindset, adapt quickly to new technologies, and am especially interested in backend development, information security and software engineering.",
-    statProjects: "Featured projects", statSemester: "University semester", statEnglish: "English level",
-    experienceEyebrow: "02 / EXPERIENCE", experienceTitle: "Where technology meets people.",
-    experiencePeriod: "AUG 2025 — AUG 2026", experienceRole: "IT Apprentice · N1 Support Analyst",
-    experienceDescription: "On-site and remote support, ticket triage and follow-up, incident diagnosis, and support for workstation, system and peripheral configuration.",
-    projectsEyebrow: "03 / PROJECTS", projectsTitle: "Projects that show my growth.",
-    projectsDescription: "Academic applications built to turn software engineering concepts into solutions that work.",
-    contactEyebrow: "04 / CONTACT", contactTitle: "Let's bring an idea<br /><span>to life?</span>",
-    contactDescription: "I'm open to internships, software development opportunities and good conversations about technology.",
-    copyEmail: "Copy email", copiedEmail: "Email copied!", whatsapp: "Chat on WhatsApp", footerText: "Designed and developed with curiosity.",
-  },
-};
+function updateThemeControl() {
+  root.dataset.theme = theme;
+  const label = translations[language][theme === "dark" ? "lightTheme" : "darkTheme"];
+  themeButton.setAttribute("aria-label", label);
+  themeButton.title = label;
+  document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#121212" : "#f4f1eb";
+}
 
-let currentLanguage = localStorage.getItem("portfolio-language") || "pt";
-
-function applyLanguage(language) {
-  currentLanguage = language;
-  document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+function applyLanguage(next) {
+  language = next;
+  root.lang = language === "pt" ? "pt-BR" : "en";
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = translations[language][element.dataset.i18n];
   });
-  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
-    element.innerHTML = translations[language][element.dataset.i18nHtml];
-  });
-  const languageButton = document.querySelector(".language-toggle");
   languageButton.textContent = language === "pt" ? "EN" : "PT";
   languageButton.setAttribute("aria-label", language === "pt" ? "Switch to English" : "Mudar para português");
-  const whatsappMessage = language === "pt"
-    ? "Olá, Marcos! Vi seu portfólio e gostaria de conversar sobre uma oportunidade."
-    : "Hi Marcos! I saw your portfolio and would like to talk about an opportunity.";
-  document.querySelector(".whatsapp-link").href = `https://wa.me/5561991594621?text=${encodeURIComponent(whatsappMessage)}`;
+  const contactsLabel = translations[language][expandButton.getAttribute("aria-expanded") === "true" ? "hideContacts" : "showContacts"];
+  expandButton.setAttribute("aria-label", contactsLabel);
+  expandButton.querySelector("span").textContent = contactsLabel;
+  document.title = language === "pt" ? "Marcos Aurélio | Engenharia de Software" : "Marcos Aurélio | Software Engineering";
+  document.querySelector('meta[name="description"]').content = language === "pt"
+    ? "Portfólio de Marcos Aurélio, estudante de Engenharia de Software. Experiência, habilidades, projetos e contato."
+    : "Portfolio of Marcos Aurélio, Software Engineering student. Experience, skills, projects and contact.";
+  const message = language === "pt"
+    ? "Olá, Marcos! Vi seu portfólio e gostaria de conversar."
+    : "Hi Marcos! I saw your portfolio and would like to talk.";
+  document.querySelector(".whatsapp-link").href = `https://wa.me/5561991594621?text=${encodeURIComponent(message)}`;
+  renderProjects();
+  updateThemeControl();
   localStorage.setItem("portfolio-language", language);
-  renderProjects(language);
 }
 
-const root = document.documentElement;
-const themeButton = document.querySelector(".theme-toggle");
-const savedTheme = localStorage.getItem("portfolio-theme");
-if (savedTheme) root.dataset.theme = savedTheme;
-
-themeButton.addEventListener("click", () => {
-  root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-  localStorage.setItem("portfolio-theme", root.dataset.theme);
-});
-
-const menuButton = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
-menuButton.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("open");
-  menuButton.classList.toggle("active", isOpen);
-  menuButton.setAttribute("aria-expanded", isOpen);
-});
-
-nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
-  nav.classList.remove("open");
-  menuButton.classList.remove("active");
-  menuButton.setAttribute("aria-expanded", "false");
-}));
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
+function activatePanel(id, updateHash = true) {
+  if (!panels.some((panel) => panel.id === id)) id = "sobre";
+  panels.forEach((panel) => { panel.hidden = panel.id !== id; });
+  tabLinks.forEach((link) => {
+    const active = link.dataset.tab === id;
+    link.classList.toggle("active", active);
+    if (active) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
   });
-}, { threshold: 0.12 });
+  if (updateHash) history.replaceState(null, "", `#${id}`);
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
 
-document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-document.querySelector(".language-toggle").addEventListener("click", () => applyLanguage(currentLanguage === "pt" ? "en" : "pt"));
-
-const copyButton = document.querySelector(".copy-email");
+tabLinks.forEach((link) => link.addEventListener("click", (event) => {
+  event.preventDefault();
+  activatePanel(link.dataset.tab);
+}));
+window.addEventListener("hashchange", () => activatePanel(location.hash.slice(1), false));
+languageButton.addEventListener("click", () => applyLanguage(language === "pt" ? "en" : "pt"));
+themeButton.addEventListener("click", () => {
+  theme = theme === "dark" ? "light" : "dark";
+  localStorage.setItem("portfolio-theme", theme);
+  updateThemeControl();
+});
+expandButton.addEventListener("click", () => {
+  const open = expandButton.getAttribute("aria-expanded") !== "true";
+  expandButton.setAttribute("aria-expanded", String(open));
+  expandButton.setAttribute("aria-label", translations[language][open ? "hideContacts" : "showContacts"]);
+  expandButton.querySelector("span").textContent = translations[language][open ? "hideContacts" : "showContacts"];
+  details.classList.toggle("open", open);
+});
 copyButton.addEventListener("click", async () => {
   try {
-    await navigator.clipboard.writeText(copyButton.dataset.email);
+    if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(copyButton.dataset.email);
+    else {
+      const input = document.createElement("textarea");
+      input.value = copyButton.dataset.email;
+      document.body.append(input);
+      input.select();
+      if (!document.execCommand("copy")) throw new Error("Copy failed");
+      input.remove();
+    }
+    copyButton.textContent = translations[language].copiedEmail;
   } catch {
-    const input = document.createElement("textarea");
-    input.value = copyButton.dataset.email;
-    input.style.position = "fixed";
-    input.style.opacity = "0";
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand("copy");
-    input.remove();
+    copyButton.textContent = translations[language].copyFailed;
   }
-  copyButton.textContent = translations[currentLanguage].copiedEmail;
-  setTimeout(() => { copyButton.textContent = translations[currentLanguage].copyEmail; }, 1800);
+  setTimeout(() => { copyButton.textContent = translations[language].copyEmail; }, 1800);
 });
 
-applyLanguage(currentLanguage);
 document.querySelector("#year").textContent = new Date().getFullYear();
+applyLanguage(language);
+activatePanel(previewOptions.get("tab") || location.hash.slice(1), false);
