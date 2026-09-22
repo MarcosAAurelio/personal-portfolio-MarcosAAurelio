@@ -35,3 +35,6 @@ target/
 # Prévias e perfis temporários de verificação visual
 .chrome-*/
 preview-*.png
+
+# Fotos privadas do portfolio
+assets/private/

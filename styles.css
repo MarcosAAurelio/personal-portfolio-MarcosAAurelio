@@ -40,11 +40,19 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .profile-card, .content-card { border: 1px solid var(--line); border-radius: 22px; background: var(--card); box-shadow: var(--shadow); }
 .profile-card { position: sticky; top: 28px; padding: 32px 26px; }
 .profile-top { display: flex; align-items: center; flex-direction: column; text-align: center; }
-.avatar { position: relative; display: grid; place-items: center; width: 148px; height: 148px; margin: 0 auto 22px; overflow: hidden; border-radius: 24px; background: linear-gradient(145deg, #383735, #222324 70%); }
+.avatar { position: relative; display: grid; place-items: center; width: 148px; height: 148px; margin: 0 auto 22px; overflow: hidden; border: 0; border-radius: 24px; background: linear-gradient(145deg, #383735, #222324 70%); padding: 0; cursor: zoom-in; }
 .avatar::before { position: absolute; content: ""; width: 190px; height: 100px; left: -25px; bottom: -64px; border-radius: 50%; background: #e8aa62; transform: rotate(-18deg); opacity: .9; }
 .avatar::after { position: absolute; content: ""; width: 112px; height: 112px; right: -60px; top: -60px; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; }
-.avatar span { position: relative; z-index: 1; color: #fff8e9; font: 600 48px "Poppins", sans-serif; letter-spacing: -.07em; }
+.avatar-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity .2s ease; }
+.avatar-label { position: relative; z-index: 1; color: #fff8e9; font: 600 48px "Poppins", sans-serif; letter-spacing: -.07em; }
+.avatar.has-photo .avatar-photo { opacity: 1; }
+.avatar.has-photo .avatar-label { opacity: 0; }
 .avatar i { position: absolute; width: 28px; height: 28px; left: 17px; top: 20px; border-radius: 50%; background: #f5ca71; filter: blur(10px); opacity: .4; }
+.photo-modal { position: fixed; inset: 0; display: none; place-items: center; padding: 28px; background: rgba(0, 0, 0, .78); z-index: 50; }
+.photo-modal.open { display: grid; }
+.photo-modal img { max-width: min(90vw, 760px); max-height: 88vh; border-radius: 18px; box-shadow: 0 25px 70px rgba(0, 0, 0, .38); object-fit: cover; }
+.photo-modal-close { position: absolute; top: 22px; right: 22px; width: 42px; height: 42px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .12); color: #fff; font-size: 28px; line-height: 1; cursor: pointer; }
+.photo-modal-close:hover { background: rgba(255, 255, 255, .2); }
 .profile-heading h1 { margin-bottom: 12px; font: 600 24px/1.25 "Poppins", sans-serif; letter-spacing: -.04em; }
 .role { display: inline-block; margin: 0; padding: 5px 13px; border-radius: 8px; background: var(--raised); font-size: 12px; line-height: 1.5; }
 .profile-expand { display: none; }
@@ -70,7 +78,9 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .moon-icon { display: none; }
 [data-theme="light"] .sun-icon { display: none; }
 [data-theme="light"] .moon-icon { display: block; }
-.panel { padding: 2px 36px 52px; animation: enter .3s ease both; }
+.panel { position: relative; padding: 2px 36px 52px; opacity: 0; transform: translate3d(0, 18px, 0) scale(.985); filter: blur(4px); transition: opacity .45s cubic-bezier(.22, 1, .36, 1), transform .45s cubic-bezier(.22, 1, .36, 1), filter .45s ease; pointer-events: none; }
+.panel.visible { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); pointer-events: auto; }
+.panel.is-exit { opacity: 0; transform: translate3d(0, -8px, 0) scale(.992); filter: blur(3px); }
 .panel[hidden] { display: none; }
 @keyframes enter { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
 .section-title { margin: 0 0 27px; }

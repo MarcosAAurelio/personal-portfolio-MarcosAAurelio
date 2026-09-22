@@ -14,6 +14,8 @@ const translations = {
     featureLearnTitle: "Aprendizado contínuo", featureLearnText: "Estudo de backend, segurança da informação e boas práticas de engenharia.",
     experienceTitle: "Experiência", educationTitle: "Formação", degree: "Engenharia de Software",
     degreeDescription: "4º semestre da graduação, com estudos em programação, estruturas de dados e desenvolvimento de sistemas.",
+    schoolTitle: "Ensino Fundamental e Médio",
+    schoolDescription: "Estudei no Colégio Militar de Brasília, concluindo o ensino fundamental e o ensino médio.",
     workTitle: "Experiência profissional", experienceRole: "Jovem Aprendiz em TI · Analista de Suporte N1",
     experiencePeriod: "Ago 2025 — Ago 2026",
     experienceDescription: "Atendimento presencial e remoto, triagem e acompanhamento de chamados, diagnóstico de incidentes e suporte à configuração de estações de trabalho, sistemas e periféricos.",
@@ -42,6 +44,8 @@ const translations = {
     featureLearnTitle: "Continuous learning", featureLearnText: "Studying backend, information security and sound engineering practices.",
     experienceTitle: "Experience", educationTitle: "Education", degree: "Software Engineering",
     degreeDescription: "Fourth semester of the degree, studying programming, data structures and systems development.",
+    schoolTitle: "Elementary and High School",
+    schoolDescription: "I studied at Colégio Militar de Brasília, completing both elementary and high school.",
     workTitle: "Professional experience", experienceRole: "IT Apprentice · Level 1 Support Analyst",
     experiencePeriod: "Aug 2025 — Aug 2026",
     experienceDescription: "On-site and remote support, ticket triage and follow-up, incident diagnosis, and help configuring workstations, systems and peripherals.",
@@ -85,6 +89,10 @@ const projects = [
 ];
 
 const root = document.documentElement;
+const avatar = document.querySelector(".avatar");
+const avatarPhoto = document.querySelector(".avatar-photo");
+const profilePhotoModal = document.getElementById("profile-photo-modal");
+const profilePhotoClose = profilePhotoModal?.querySelector(".photo-modal-close");
 const languageButton = document.querySelector(".language-toggle");
 const themeButton = document.querySelector(".theme-toggle");
 const expandButton = document.querySelector(".profile-expand");
@@ -93,6 +101,37 @@ const tabLinks = [...document.querySelectorAll("[data-tab]")];
 const panels = [...document.querySelectorAll(".panel")];
 const copyButton = document.querySelector(".copy-email");
 const previewOptions = new URLSearchParams(location.search);
+
+if (avatar && avatarPhoto) {
+  const markAvatarPhoto = () => avatar.classList.add("has-photo");
+  if (avatarPhoto.complete && avatarPhoto.naturalWidth > 0) {
+    markAvatarPhoto();
+  } else {
+    avatarPhoto.addEventListener("load", markAvatarPhoto, { once: true });
+    avatarPhoto.addEventListener("error", () => avatar.classList.remove("has-photo"), { once: true });
+  }
+}
+
+if (avatar && profilePhotoModal) {
+  const openProfilePhoto = () => {
+    profilePhotoModal.classList.add("open");
+    profilePhotoModal.setAttribute("aria-hidden", "false");
+  };
+  const closeProfilePhoto = () => {
+    profilePhotoModal.classList.remove("open");
+    profilePhotoModal.setAttribute("aria-hidden", "true");
+  };
+
+  avatar.addEventListener("click", openProfilePhoto);
+  profilePhotoClose?.addEventListener("click", closeProfilePhoto);
+  profilePhotoModal.addEventListener("click", (event) => {
+    if (event.target === profilePhotoModal) closeProfilePhoto();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && profilePhotoModal.classList.contains("open")) closeProfilePhoto();
+  });
+}
+
 let language = previewOptions.get("lang") === "en" ? "en" : previewOptions.get("lang") === "pt"
   ? "pt" : localStorage.getItem("portfolio-language") === "en" ? "en" : "pt";
 let theme = previewOptions.get("theme") === "light" ? "light" : previewOptions.get("theme") === "dark"
@@ -155,13 +194,35 @@ function applyLanguage(next) {
 
 function activatePanel(id, updateHash = true) {
   if (!panels.some((panel) => panel.id === id)) id = "sobre";
-  panels.forEach((panel) => { panel.hidden = panel.id !== id; });
+
+  const activePanel = panels.find((panel) => panel.id === id);
+
+  panels.forEach((panel) => {
+    const isActive = panel.id === id;
+    panel.hidden = false;
+    panel.classList.remove("is-exit");
+
+    if (isActive) {
+      panel.classList.add("visible");
+      panel.style.pointerEvents = "auto";
+    } else {
+      panel.classList.remove("visible");
+      panel.classList.add("is-exit");
+      panel.style.pointerEvents = "none";
+      window.setTimeout(() => {
+        panel.hidden = true;
+        panel.classList.remove("is-exit");
+      }, 420);
+    }
+  });
+
   tabLinks.forEach((link) => {
     const active = link.dataset.tab === id;
     link.classList.toggle("active", active);
     if (active) link.setAttribute("aria-current", "page");
     else link.removeAttribute("aria-current");
   });
+
   if (updateHash) history.replaceState(null, "", `#${id}`);
   window.scrollTo({ top: 0, behavior: "instant" });
 }

@@ -17,7 +17,11 @@
   <div class="layout">
     <aside class="profile-card" aria-label="Perfil de Marcos Aurélio">
       <div class="profile-top">
-        <div class="avatar" aria-hidden="true"><span>MA</span><i></i></div>
+        <button class="avatar" type="button" aria-label="Ampliar foto de perfil">
+          <img class="avatar-photo" src="assets/private/foto-perfil.jpg" alt="Marcos Aurélio">
+          <span class="avatar-label">MA</span>
+          <i aria-hidden="true"></i>
+        </button>
         <div class="profile-heading">
           <h1>Marcos Aurélio</h1>
           <p class="role" data-i18n="role">Engenharia de Software</p>
@@ -27,7 +31,7 @@
       <div class="profile-details" id="profile-details">
         <div class="rule"></div>
         <ul class="contact-list">
-          <li><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><span class="contact-label" data-i18n="emailLabel">E-MAIL</span><a href="mailto:marcosrtaurelio23@gmail.com">marcosrtaurelio23@gmail.com</a></div></li>
+          <li><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><span class="contact-label" data-i18n="emailLabel">E-MAIL</span><a href="mailto:marcosdevaurelio@gmail.com">marcosdevaurelio@gmail.com</a></div></li>
           <li><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h4l2 5-2 2a14 14 0 0 0 4 4l2-2 5 2v4a3 3 0 0 1-3 3C9 21 3 15 3 6a3 3 0 0 1 3-3Z"/></svg></span><div><span class="contact-label" data-i18n="phoneLabel">TELEFONE</span><a href="https://wa.me/5561991594621" target="_blank" rel="noopener noreferrer">+55 (61) 99159-4621</a></div></li>
           <li><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><span class="contact-label" data-i18n="locationLabel">LOCALIZAÇÃO</span><span data-i18n="location">Brasília, DF, Brasil</span></div></li>
           <li><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v15M2 20h20M8 8h8m-8 4h8m-8 4h5"/></svg></span><div><span class="contact-label" data-i18n="educationLabel">FORMAÇÃO</span><span data-i18n="university">Universidade Católica de Brasília</span></div></li>
@@ -69,10 +73,21 @@
       </section>
       <section class="panel" id="experiencia" aria-labelledby="experience-title" hidden>
         <div class="section-title"><h2 id="experience-title" data-i18n="experienceTitle">Experiência</h2><span></span></div>
-        <h3 class="subheading with-icon"><span aria-hidden="true">▤</span><span data-i18n="educationTitle">Formação</span></h3>
-        <ol class="timeline"><li><h4 data-i18n="degree">Engenharia de Software</h4><span data-i18n="university">Universidade Católica de Brasília</span><p data-i18n="degreeDescription">4º semestre da graduação, com estudos em programação, estruturas de dados e desenvolvimento de sistemas.</p></li></ol>
         <h3 class="subheading with-icon"><span aria-hidden="true">▣</span><span data-i18n="workTitle">Experiência profissional</span></h3>
         <ol class="timeline"><li><h4 data-i18n="experienceRole">Jovem Aprendiz em TI · Analista de Suporte N1</h4><span>Viveo · CM Hospitalar <b data-i18n="experiencePeriod">Ago 2025 — Ago 2026</b></span><p data-i18n="experienceDescription">Atendimento presencial e remoto, triagem e acompanhamento de chamados, diagnóstico de incidentes e suporte à configuração de estações de trabalho, sistemas e periféricos.</p></li></ol>
+        <h3 class="subheading with-icon"><span aria-hidden="true">▤</span><span data-i18n="educationTitle">Formação</span></h3>
+        <ol class="timeline">
+          <li>
+            <h4 data-i18n="degree">Engenharia de Software</h4>
+            <span data-i18n="university">Universidade Católica de Brasília</span>
+            <p data-i18n="degreeDescription">4º semestre da graduação, com estudos em programação, estruturas de dados e desenvolvimento de sistemas.</p>
+          </li>
+          <li>
+            <h4 data-i18n="schoolTitle">Ensino Fundamental e Médio</h4>
+            <span>Colégio Militar de Brasília</span>
+            <p data-i18n="schoolDescription">Estudei no Colégio Militar de Brasília, concluindo o ensino fundamental e o ensino médio.</p>
+          </li>
+        </ol>
         <h3 class="subheading" data-i18n="focusTitle">Áreas de interesse</h3>
         <div class="skill-list"><span>Backend</span><span data-i18n="security">Segurança da informação</span><span data-i18n="softwareDevelopment">Desenvolvimento de software</span></div>
         <h3 class="subheading" data-i18n="languagesTitle">Idiomas</h3>
@@ -87,10 +102,14 @@
       <section class="panel" id="contato" aria-labelledby="contact-title" hidden>
         <div class="section-title"><h2 id="contact-title" data-i18n="contactTitle">Contato</h2><span></span></div>
         <p class="section-lead" data-i18n="contactLead">Estou aberto a estágios, oportunidades em desenvolvimento de software e conversas sobre tecnologia. Vamos conversar?</p>
-        <div class="contact-panel"><div class="contact-art" aria-hidden="true">✉</div><div><h3 data-i18n="getInTouch">Entre em contato</h3><p data-i18n="contactPrompt">Escolha o canal que preferir. Responderei assim que possível.</p><a class="primary-link" href="mailto:marcosrtaurelio23@gmail.com"><span data-i18n="sendEmail">Enviar e-mail</span><span aria-hidden="true">↗</span></a></div></div>
-        <div class="contact-methods"><a href="https://wa.me/5561991594621" class="whatsapp-link" target="_blank" rel="noopener noreferrer"><span data-i18n="whatsapp">Conversar pelo WhatsApp</span> ↗</a><button class="copy-email" type="button" data-email="marcosrtaurelio23@gmail.com" data-i18n="copyEmail">Copiar e-mail</button></div>
+        <div class="contact-panel"><div class="contact-art" aria-hidden="true">✉</div><div><h3 data-i18n="getInTouch">Entre em contato</h3><p data-i18n="contactPrompt">Escolha o canal que preferir. Responderei assim que possível.</p><a class="primary-link" href="mailto:marcosdevaurelio@gmail.com"><span data-i18n="sendEmail">Enviar e-mail</span><span aria-hidden="true">↗</span></a></div></div>
+        <div class="contact-methods"><a href="https://wa.me/5561991594621" class="whatsapp-link" target="_blank" rel="noopener noreferrer"><span data-i18n="whatsapp">Conversar pelo WhatsApp</span> ↗</a><button class="copy-email" type="button" data-email="marcosdevaurelio@gmail.com" data-i18n="copyEmail">Copiar e-mail</button></div>
       </section>
     </main>
+  </div>
+  <div class="photo-modal" id="profile-photo-modal" aria-hidden="true">
+    <button class="photo-modal-close" type="button" aria-label="Fechar imagem ampliada">×</button>
+    <img src="assets/private/foto-perfil.jpg" alt="Marcos Aurélio em close-up" />
   </div>
   <footer>© <span id="year"></span> Marcos Aurélio</footer>
 </body>
