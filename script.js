@@ -5,7 +5,7 @@ const translations = {
     location: "Brasília, DF, Brasil", university: "Universidade Católica de Brasília",
     navAbout: "Sobre", navExperience: "Experiência", navProjects: "Projetos", navContact: "Contato",
     aboutTitle: "Sobre mim",
-    aboutP1: "Olá! Sou Marcos Aurélio, estudante de Engenharia de Software na Universidade Católica de Brasília. Gosto de transformar ideias em soluções úteis, com atenção à lógica, à experiência de uso e aos detalhes.",
+    aboutP1: "Olá! Meu nome é Marcos Aurélio, estudante de Engenharia de Software na Universidade Católica de Brasília. Gosto de transformar ideias em soluções úteis, com atenção à lógica, à experiência de uso e aos detalhes.",
     aboutP2: "Minha experiência em suporte de TI na Viveo me aproximou dos desafios reais das pessoas. Hoje, sigo aprofundando meus conhecimentos em desenvolvimento de software, backend e segurança da informação.",
     whatIDo: "O que eu faço", skillsTitle: "Tecnologias",
     featureDevTitle: "Desenvolvimento de software", featureDevText: "Projetos em Java, C, C# e Python, com foco em soluções claras e funcionais.",
@@ -35,7 +35,7 @@ const translations = {
     location: "Brasília, DF, Brazil", university: "Catholic University of Brasília",
     navAbout: "About", navExperience: "Experience", navProjects: "Projects", navContact: "Contact",
     aboutTitle: "About me",
-    aboutP1: "Hi! I'm Marcos Aurélio, a Software Engineering student at the Catholic University of Brasília. I enjoy turning ideas into useful solutions, with attention to logic, user experience and detail.",
+    aboutP1: "Hi! My name is Marcos Aurélio, a Software Engineering student at the Catholic University of Brasília. I enjoy turning ideas into useful solutions, with attention to logic, user experience and detail.",
     aboutP2: "My IT support experience at Viveo brought me closer to people's real challenges. I continue to deepen my knowledge of software development, backend and information security.",
     whatIDo: "What I do", skillsTitle: "Technologies",
     featureDevTitle: "Software development", featureDevText: "Projects in Java, C, C# and Python, focused on clear, functional solutions.",
@@ -68,7 +68,7 @@ const projects = [
       pt: "Aplicação Java para leitura de CSV, cálculo de pontuação, saldo de gols e estatísticas de desempenho.",
       en: "Java application for reading CSV files and calculating points, goal difference and performance statistics.",
     },
-    tags: "Java · CSV · Algoritmos", icon: "chart", color: "linear-gradient(135deg, #235743, #0c2a24)",
+    tags: "Java · CSV · Algoritmos", symbol: "BR", color: "linear-gradient(135deg, #235743, #0c2a24)",
   },
   {
     title: { pt: "Aplicação Desktop", en: "Desktop Application" },
@@ -76,7 +76,7 @@ const projects = [
       pt: "Sistema desktop modular com interface JavaFX, padrão MVC e manipulação de eventos.",
       en: "Modular desktop application with a JavaFX interface, MVC pattern and event handling.",
     },
-    tags: "Java · JavaFX · MVC", icon: "laptop", color: "linear-gradient(135deg, #51436f, #262139)",
+    tags: "Java · JavaFX · MVC", symbol: "JFX", color: "linear-gradient(135deg, #51436f, #262139)",
   },
   {
     title: { pt: "Conversor de Moedas", en: "Currency Converter" },
@@ -84,7 +84,7 @@ const projects = [
       pt: "Utilitário em C com estruturas de dados, alocação dinâmica, ponteiros e algoritmos.",
       en: "C utility using data structures, dynamic allocation, pointers and algorithms.",
     },
-    tags: "C · Estruturas de Dados", icon: "exchange", color: "linear-gradient(135deg, #814c47, #3a2427)",
+    tags: "C · Estruturas de Dados", symbol: "C$", color: "linear-gradient(135deg, #814c47, #3a2427)",
   },
 ];
 
@@ -99,8 +99,11 @@ const expandButton = document.querySelector(".profile-expand");
 const details = document.querySelector(".profile-details");
 const tabLinks = [...document.querySelectorAll("[data-tab]")];
 const panels = [...document.querySelectorAll(".panel")];
+const contentCard = document.querySelector(".content-card");
 const copyButton = document.querySelector(".copy-email");
 const previewOptions = new URLSearchParams(location.search);
+const panelTransitionTimers = new WeakMap();
+let panelTransitionSerial = 0;
 
 if (avatar && avatarPhoto) {
   const markAvatarPhoto = () => avatar.classList.add("has-photo");
@@ -145,15 +148,9 @@ function renderProjects() {
     const art = document.createElement("div");
     art.className = "project-art";
     art.style.setProperty("--project-bg", project.color);
-    art.setAttribute("aria-hidden", "true");
-    const iconFrame = document.createElement("span");
-    iconFrame.className = "project-art-icon";
-    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    use.setAttribute("href", `#icon-${project.icon}`);
-    icon.append(use);
-    iconFrame.append(icon);
-    art.append(iconFrame);
+    const symbol = document.createElement("span");
+    symbol.textContent = project.symbol;
+    art.append(symbol);
     const title = document.createElement("h3");
     title.textContent = project.title[language];
     const description = document.createElement("p");
@@ -198,43 +195,51 @@ function applyLanguage(next) {
   localStorage.setItem("portfolio-language", language);
 }
 
-let panelTransitionTimer;
-
 function activatePanel(id, updateHash = true) {
   if (!panels.some((panel) => panel.id === id)) id = "sobre";
 
-  const activePanel = panels.find((panel) => panel.id === id);
-  const outgoingPanel = panels.find((panel) => panel.classList.contains("visible"))
-    || panels.find((panel) => panel.classList.contains("is-exit"));
-  const shouldAnimateExit = outgoingPanel?.classList.contains("visible")
-    && outgoingPanel !== activePanel
-    && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const transitionSerial = ++panelTransitionSerial;
 
-  window.clearTimeout(panelTransitionTimer);
-  panels.forEach((panel) => {
-    if (panel === outgoingPanel) return;
-    panel.hidden = true;
-    panel.classList.remove("visible", "is-exit");
-  });
-
-  const showActivePanel = () => {
-    if (outgoingPanel && outgoingPanel !== activePanel) {
-      outgoingPanel.hidden = true;
-      outgoingPanel.classList.remove("is-exit");
-    }
-    activePanel.hidden = false;
-    activePanel.classList.remove("is-exit");
-    activePanel.getBoundingClientRect();
-    activePanel.classList.add("visible");
-  };
-
-  if (shouldAnimateExit) {
-    outgoingPanel.classList.remove("visible");
-    outgoingPanel.classList.add("is-exit");
-    panelTransitionTimer = window.setTimeout(showActivePanel, 180);
-  } else {
-    showActivePanel();
+  if (contentCard) {
+    contentCard.classList.remove("is-switching");
+    void contentCard.offsetWidth;
+    contentCard.classList.add("is-switching");
+    window.setTimeout(() => {
+      if (transitionSerial === panelTransitionSerial) contentCard.classList.remove("is-switching");
+    }, 720);
   }
+
+  panels.forEach((panel) => {
+    const isActive = panel.id === id;
+    const wasDisplayed = !panel.hidden;
+    const previousTimer = panelTransitionTimers.get(panel);
+    if (previousTimer) window.clearTimeout(previousTimer);
+
+    if (isActive) {
+      panel.hidden = false;
+      panel.classList.remove("visible", "is-exit");
+      panel.style.pointerEvents = "auto";
+      panel.offsetWidth;
+      window.requestAnimationFrame(() => {
+        if (transitionSerial === panelTransitionSerial) panel.classList.add("visible");
+      });
+    } else if (wasDisplayed) {
+      panel.hidden = false;
+      panel.classList.remove("visible");
+      panel.classList.add("is-exit");
+      panel.style.pointerEvents = "none";
+      const timer = window.setTimeout(() => {
+        if (transitionSerial !== panelTransitionSerial) return;
+        panel.hidden = true;
+        panel.classList.remove("is-exit");
+      }, 360);
+      panelTransitionTimers.set(panel, timer);
+    } else {
+      panel.hidden = true;
+      panel.classList.remove("visible", "is-exit");
+      panel.style.pointerEvents = "none";
+    }
+  });
 
   tabLinks.forEach((link) => {
     const active = link.dataset.tab === id;
