@@ -113,6 +113,11 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .section-title > span { display: block; width: 42px; height: 5px; border-radius: 10px; background: var(--accent); }
 .intro p, .section-lead { color: var(--muted); font-size: 15px; line-height: 1.8; }
 .intro p { margin-bottom: 15px; }
+.resume-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.resume-link { gap: 12px; }
+.resume-link svg { width: 18px; height: 18px; }
+.profile-details .resume-actions { margin-top: 22px; }
+.profile-details .resume-link { width: 100%; justify-content: center; }
 .subheading { margin: 34px 0 20px; font: 600 21px/1.3 "Poppins", sans-serif; letter-spacing: -.025em; }
 .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .feature-card { display: flex; gap: 17px; min-height: 144px; padding: 23px 20px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(130deg, var(--card-alt), var(--card)); box-shadow: 4px 8px 18px rgba(0,0,0,.05); }
