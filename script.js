@@ -5,14 +5,16 @@ const translations = {
     location: "Brasília, DF, Brasil", university: "Universidade Católica de Brasília",
     navAbout: "Sobre", navExperience: "Experiência", navProjects: "Projetos", navContact: "Contato",
     aboutTitle: "Sobre mim",
-    aboutP1: "Olá! Meu nome é Marcos Aurélio, estudante de Engenharia de Software na Universidade Católica de Brasília. Gosto de transformar ideias em soluções úteis, com atenção à lógica, à experiência de uso e aos detalhes.",
-    aboutP2: "Minha experiência em suporte de TI na Viveo me aproximou dos desafios reais das pessoas. Hoje, sigo aprofundando meus conhecimentos em desenvolvimento de software, backend e segurança da informação.",
+    aboutP1: "Sou Marcos Aurélio e estudo Engenharia de Software na Universidade Católica de Brasília. Gosto de programar e de pensar em como as pessoas vão usar o que desenvolvo.",
+    aboutP2: "Trabalhei com suporte de TI na Viveo, atendendo usuários e acompanhando chamados. Também estudo desenvolvimento de software, backend e segurança da informação.",
     downloadResume: "Baixar currículo",
-    whatIDo: "O que eu faço", skillsTitle: "Tecnologias",
-    featureDevTitle: "Desenvolvimento de software", featureDevText: "Projetos em Java, C, C# e Python, com foco em soluções claras e funcionais.",
+    whatIDo: "O que eu faço", skillsTitle: "Tecnologias e ferramentas",
+    skillsLanguages: "Linguagens e web", skillsInterfaces: "Frameworks e interfaces",
+    skillsDataCloud: "Dados e nuvem", skillsTools: "Ferramentas",
+    featureDevTitle: "Desenvolvimento de software", featureDevText: "Projetos em Java, C, C# e Python.",
     featureSupportTitle: "Suporte de TI", featureSupportText: "Diagnóstico de incidentes, atendimento e acompanhamento de chamados.",
-    featureDataTitle: "Dados e lógica", featureDataText: "Manipulação de dados, SQL e algoritmos para resolver problemas de forma estruturada.",
-    featureLearnTitle: "Aprendizado contínuo", featureLearnText: "Estudo de backend, segurança da informação e boas práticas de engenharia.",
+    featureDataTitle: "Dados e lógica", featureDataText: "Uso SQL e algoritmos para organizar dados e resolver problemas.",
+    featureLearnTitle: "Aprendizado contínuo", featureLearnText: "Estudo backend, segurança da informação e práticas de engenharia de software.",
     experienceTitle: "Experiência", educationTitle: "Formação", degree: "Engenharia de Software",
     degreeDescription: "4º semestre da graduação, com estudos em programação, estruturas de dados e desenvolvimento de sistemas.",
     schoolTitle: "Ensino Fundamental e Médio",
@@ -22,9 +24,9 @@ const translations = {
     experienceDescription: "Atendimento presencial e remoto, triagem e acompanhamento de chamados, diagnóstico de incidentes e suporte à configuração de estações de trabalho, sistemas e periféricos.",
     focusTitle: "Áreas de interesse", security: "Segurança da informação", softwareDevelopment: "Desenvolvimento de software",
     languagesTitle: "Idiomas", englishLevel: "Inglês · B2",
-    projectsTitle: "Projetos", projectsLead: "Uma seleção de trabalhos acadêmicos que mostram meu aprendizado em programação e resolução de problemas.",
+    projectsTitle: "Projetos", projectsLead: "Projetos acadêmicos que desenvolvi em Java, JavaFX e C.",
     allGitHub: "Ver meu perfil no GitHub",
-    contactTitle: "Contato", contactLead: "Estou aberto a estágios, oportunidades em desenvolvimento de software e conversas sobre tecnologia. Vamos conversar?",
+    contactTitle: "Contato", contactLead: "Tenho interesse em estágios e vagas de desenvolvimento de software. Também gosto de conversar sobre tecnologia.",
     getInTouch: "Entre em contato", contactPrompt: "Escolha o canal que preferir. Responderei assim que possível.",
     sendEmail: "Enviar e-mail", whatsapp: "Conversar pelo WhatsApp", copyEmail: "Copiar e-mail", copiedEmail: "E-mail copiado!",
     copyFailed: "Não foi possível copiar", lightTheme: "Ativar tema claro", darkTheme: "Ativar tema escuro",
@@ -36,14 +38,16 @@ const translations = {
     location: "Brasília, DF, Brazil", university: "Catholic University of Brasília",
     navAbout: "About", navExperience: "Experience", navProjects: "Projects", navContact: "Contact",
     aboutTitle: "About me",
-    aboutP1: "Hi! My name is Marcos Aurélio, a Software Engineering student at the Catholic University of Brasília. I enjoy turning ideas into useful solutions, with attention to logic, user experience and detail.",
-    aboutP2: "My IT support experience at Viveo brought me closer to people's real challenges. I continue to deepen my knowledge of software development, backend and information security.",
+    aboutP1: "I'm Marcos Aurélio, a Software Engineering student at the Catholic University of Brasília. I enjoy programming and thinking about how people will use what I build.",
+    aboutP2: "I worked in IT support at Viveo, helping users and tracking support tickets. I also study software development, backend and information security.",
     downloadResume: "Download resume",
-    whatIDo: "What I do", skillsTitle: "Technologies",
-    featureDevTitle: "Software development", featureDevText: "Projects in Java, C, C# and Python, focused on clear, functional solutions.",
+    whatIDo: "What I do", skillsTitle: "Technologies and tools",
+    skillsLanguages: "Languages and web", skillsInterfaces: "Frameworks and interfaces",
+    skillsDataCloud: "Data and cloud", skillsTools: "Tools",
+    featureDevTitle: "Software development", featureDevText: "Projects in Java, C, C# and Python.",
     featureSupportTitle: "IT support", featureSupportText: "Incident diagnosis, user support and ticket follow-up.",
-    featureDataTitle: "Data and logic", featureDataText: "Data handling, SQL and algorithms to solve problems in a structured way.",
-    featureLearnTitle: "Continuous learning", featureLearnText: "Studying backend, information security and sound engineering practices.",
+    featureDataTitle: "Data and logic", featureDataText: "I use SQL and algorithms to organize data and solve problems.",
+    featureLearnTitle: "Continuous learning", featureLearnText: "I study backend, information security and software engineering practices.",
     experienceTitle: "Experience", educationTitle: "Education", degree: "Software Engineering",
     degreeDescription: "Fourth semester of the degree, studying programming, data structures and systems development.",
     schoolTitle: "Elementary and High School",
@@ -53,9 +57,9 @@ const translations = {
     experienceDescription: "On-site and remote support, ticket triage and follow-up, incident diagnosis, and help configuring workstations, systems and peripherals.",
     focusTitle: "Areas of interest", security: "Information security", softwareDevelopment: "Software development",
     languagesTitle: "Languages", englishLevel: "English · B2",
-    projectsTitle: "Projects", projectsLead: "A selection of academic work showing my progress in programming and problem solving.",
+    projectsTitle: "Projects", projectsLead: "Academic projects I've built in Java, JavaFX and C.",
     allGitHub: "Visit my GitHub profile",
-    contactTitle: "Contact", contactLead: "I'm open to internships, software development opportunities and conversations about technology. Let's talk.",
+    contactTitle: "Contact", contactLead: "I'm interested in internships and software development roles. I'm also happy to talk about technology.",
     getInTouch: "Get in touch", contactPrompt: "Choose your preferred channel. I'll respond as soon as I can.",
     sendEmail: "Send email", whatsapp: "Chat on WhatsApp", copyEmail: "Copy email", copiedEmail: "Email copied!",
     copyFailed: "Could not copy", lightTheme: "Switch to light theme", darkTheme: "Switch to dark theme",
@@ -70,7 +74,8 @@ const projects = [
       pt: "Aplicação Java para leitura de CSV, cálculo de pontuação, saldo de gols e estatísticas de desempenho.",
       en: "Java application for reading CSV files and calculating points, goal difference and performance statistics.",
     },
-    tags: "Java · CSV · Algoritmos", symbol: "BR", color: "linear-gradient(135deg, #235743, #0c2a24)",
+    tags: { pt: "Java · CSV · Algoritmos", en: "Java · CSV · Algorithms" },
+    symbol: "BR", color: "linear-gradient(135deg, #235743, #0c2a24)",
   },
   {
     title: { pt: "Aplicação Desktop", en: "Desktop Application" },
@@ -78,7 +83,8 @@ const projects = [
       pt: "Sistema desktop modular com interface JavaFX, padrão MVC e manipulação de eventos.",
       en: "Modular desktop application with a JavaFX interface, MVC pattern and event handling.",
     },
-    tags: "Java · JavaFX · MVC", symbol: "JFX", color: "linear-gradient(135deg, #51436f, #262139)",
+    tags: { pt: "Java · JavaFX · MVC", en: "Java · JavaFX · MVC" },
+    symbol: "JFX", color: "linear-gradient(135deg, #51436f, #262139)",
   },
   {
     title: { pt: "Conversor de Moedas", en: "Currency Converter" },
@@ -86,7 +92,8 @@ const projects = [
       pt: "Utilitário em C com estruturas de dados, alocação dinâmica, ponteiros e algoritmos.",
       en: "C utility using data structures, dynamic allocation, pointers and algorithms.",
     },
-    tags: "C · Estruturas de Dados", symbol: "C$", color: "linear-gradient(135deg, #814c47, #3a2427)",
+    tags: { pt: "C · Estruturas de Dados", en: "C · Data Structures" },
+    symbol: "C$", color: "linear-gradient(135deg, #814c47, #3a2427)",
   },
 ];
 
@@ -137,10 +144,23 @@ if (avatar && profilePhotoModal) {
   });
 }
 
-let language = previewOptions.get("lang") === "en" ? "en" : previewOptions.get("lang") === "pt"
-  ? "pt" : localStorage.getItem("portfolio-language") === "en" ? "en" : "pt";
-let theme = previewOptions.get("theme") === "light" ? "light" : previewOptions.get("theme") === "dark"
-  ? "dark" : localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
+function getPreference(parameter, storageKey, allowedValues, fallback) {
+  const previewValue = previewOptions.get(parameter);
+  if (allowedValues.includes(previewValue)) return previewValue;
+
+  const savedValue = localStorage.getItem(storageKey);
+  return allowedValues.includes(savedValue) ? savedValue : fallback;
+}
+
+let language = getPreference("lang", "portfolio-language", ["pt", "en"], "pt");
+let theme = getPreference("theme", "portfolio-theme", ["dark", "light"], "dark");
+
+function updateContactsLabel() {
+  const key = expandButton.getAttribute("aria-expanded") === "true" ? "hideContacts" : "showContacts";
+  const label = translations[language][key];
+  expandButton.setAttribute("aria-label", label);
+  expandButton.querySelector("span").textContent = label;
+}
 
 function renderProjects() {
   const grid = document.querySelector("#project-grid");
@@ -159,7 +179,7 @@ function renderProjects() {
     description.textContent = project.description[language];
     const tags = document.createElement("div");
     tags.className = "project-tags";
-    tags.textContent = project.tags;
+    tags.textContent = project.tags[language];
     article.append(art, title, description, tags);
     return article;
   }));
@@ -181,9 +201,7 @@ function applyLanguage(next) {
   });
   languageButton.textContent = language === "pt" ? "EN" : "PT";
   languageButton.setAttribute("aria-label", language === "pt" ? "Switch to English" : "Mudar para português");
-  const contactsLabel = translations[language][expandButton.getAttribute("aria-expanded") === "true" ? "hideContacts" : "showContacts"];
-  expandButton.setAttribute("aria-label", contactsLabel);
-  expandButton.querySelector("span").textContent = contactsLabel;
+  updateContactsLabel();
   document.title = language === "pt" ? "Marcos Aurélio | Engenharia de Software" : "Marcos Aurélio | Software Engineering";
   document.querySelector('meta[name="description"]').content = language === "pt"
     ? "Portfólio de Marcos Aurélio, estudante de Engenharia de Software. Experiência, habilidades, projetos e contato."
@@ -268,8 +286,7 @@ themeButton.addEventListener("click", () => {
 expandButton.addEventListener("click", () => {
   const open = expandButton.getAttribute("aria-expanded") !== "true";
   expandButton.setAttribute("aria-expanded", String(open));
-  expandButton.setAttribute("aria-label", translations[language][open ? "hideContacts" : "showContacts"]);
-  expandButton.querySelector("span").textContent = translations[language][open ? "hideContacts" : "showContacts"];
+  updateContactsLabel();
   details.classList.toggle("open", open);
 });
 copyButton.addEventListener("click", async () => {
@@ -279,9 +296,12 @@ copyButton.addEventListener("click", async () => {
       const input = document.createElement("textarea");
       input.value = copyButton.dataset.email;
       document.body.append(input);
-      input.select();
-      if (!document.execCommand("copy")) throw new Error("Copy failed");
-      input.remove();
+      try {
+        input.select();
+        if (!document.execCommand("copy")) throw new Error("Copy failed");
+      } finally {
+        input.remove();
+      }
     }
     copyButton.textContent = translations[language].copiedEmail;
   } catch {

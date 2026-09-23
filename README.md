@@ -23,7 +23,7 @@
 
 ## Visão geral
 
-Este é o código do meu portfólio pessoal. O site apresenta minha experiência em suporte de TI, formação em Engenharia de Software e projetos acadêmicos. Foi feito com **HTML, CSS e JavaScript puro**, sem etapa de build.
+Este é meu portfólio pessoal. Reuni nele minha experiência em suporte de TI, minha formação em Engenharia de Software e alguns projetos acadêmicos. O site usa HTML, CSS e JavaScript, sem etapa de build.
 
 <div align="center">
   <img src="assets/screenshots/01-sobre-escuro.png" alt="Página Sobre do portfólio em português e tema escuro" width="900">
@@ -44,19 +44,15 @@ Este é o código do meu portfólio pessoal. O site apresenta minha experiência
   <img src="assets/screenshots/05-sobre-claro-mobile.png" alt="Página Sobre em tela de celular e tema claro" width="280">
 </div>
 
-> As capturas mostram a versão anterior dos atalhos sociais. Para ver os ícones do GitHub e LinkedIn e as transições atualizadas, abra o site localmente.
-
 ## Recursos
 
-- **Quatro seções:** Sobre, Experiência, Projetos e Contato, com transições suaves, indicador animado na navegação e acesso também por `#sobre`, `#experiencia`, `#projetos` e `#contato`.
-- **Português e inglês:** alternância de idioma para a interface, descrições dos projetos e mensagem do WhatsApp.
-- **Temas claro e escuro:** cores e controles adaptados ao tema escolhido.
-- **Ícones SVG:** conjunto visual próprio, integrado ao HTML e aos cartões de projetos, sem biblioteca externa.
-- **Preferências salvas:** idioma e tema persistem no `localStorage` do navegador.
-- **Layout responsivo:** cartões de projetos e recursos se reorganizam em telas menores; os contatos do perfil podem ser expandidos.
-- **Contato direto:** links para e-mail e WhatsApp, além de um botão para copiar o endereço de e-mail.
-- **Redes sociais:** atalhos para GitHub e LinkedIn com seus ícones e estilos próprios no cartão de perfil.
-- **Foto opcional:** se `assets/private/foto-perfil.jpg` existir localmente, ela aparece no perfil e pode ser ampliada; caso contrário, o avatar mostra “MA”.
+- As seções Sobre, Experiência, Projetos e Contato têm transições e podem ser abertas por `#sobre`, `#experiencia`, `#projetos` e `#contato`.
+- O botão de idioma traduz a interface, os projetos e a mensagem do WhatsApp.
+- Os controles de tema alternam entre claro e escuro. Idioma e tema ficam salvos no `localStorage`.
+- Os ícones SVG estão no HTML, sem biblioteca externa.
+- Em telas menores, os cartões se reorganizam e os contatos do perfil podem ser expandidos.
+- Há links para e-mail, WhatsApp, GitHub e LinkedIn, além de um botão para copiar o endereço de e-mail.
+- A foto `assets/foto-perfil.jpeg` aparece no perfil e pode ser ampliada.
 
 ## Projetos apresentados
 
@@ -87,7 +83,7 @@ Os parâmetros de URL facilitam conferir um idioma, tema ou seção, por exemplo
 index.html?theme=light&lang=en&tab=projetos
 ```
 
-Valores aceitos: `theme=dark|light`, `lang=pt|en` e `tab=sobre|experiencia|projetos|contato`. As capturas deste README mostram minha foto de perfil. O arquivo original permanece em `assets/private/`, pasta ignorada pelo Git; a foto aparece nas imagens versionadas em `assets/screenshots/`.
+Valores aceitos: `theme=dark|light`, `lang=pt|en` e `tab=sobre|experiencia|projetos|contato`. A foto de perfil está em `assets/foto-perfil.jpeg`.
 
 ## Estrutura
 
