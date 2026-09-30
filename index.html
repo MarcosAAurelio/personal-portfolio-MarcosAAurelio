@@ -7,6 +7,7 @@
   <meta name="author" content="Marcos Aurélio">
   <meta name="theme-color" content="#121212">
   <title>Marcos Aurélio | Engenharia de Software</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo-marcos-aurelio.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -65,6 +66,27 @@
     </aside>
     <main class="content-card">
       <header class="content-header">
+        <a class="site-brand" href="#sobre" aria-label="Marcos Aurélio — Sobre">
+          <svg viewBox="0 0 120 56" aria-hidden="true" focusable="false">
+            <defs>
+              <path id="brand-outline" d="M8 46V17C8 5 17 3 25 12L51 39C56 44 61 47 67 46M58 31L75 10C80 4 87 5 92 13L112 46M78 34H103"/>
+              <mask id="brand-shimmer-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="56">
+                <use href="#brand-outline" style="stroke: white; fill: none"/>
+              </mask>
+              <linearGradient id="brand-shimmer-gradient">
+                <stop offset="0" stop-color="var(--accent)" stop-opacity="0"/>
+                <stop offset=".4" stop-color="var(--accent)"/>
+                <stop offset=".5" stop-color="#fff"/>
+                <stop offset=".6" stop-color="var(--accent)"/>
+                <stop offset="1" stop-color="var(--accent)" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <use href="#brand-outline"/>
+            <g mask="url(#brand-shimmer-mask)">
+              <rect class="brand-shimmer" x="0" y="0" width="80" height="56" fill="url(#brand-shimmer-gradient)" stroke="none"/>
+            </g>
+          </svg>
+        </a>
         <nav class="tabs" aria-label="Navegação principal">
           <a href="#sobre" data-tab="sobre" data-i18n="navAbout">Sobre</a>
           <a href="#experiencia" data-tab="experiencia" data-i18n="navExperience">Experiência</a>
@@ -81,7 +103,7 @@
       </header>
       <section class="panel" id="sobre" aria-labelledby="about-title">
         <div class="section-title"><h2 id="about-title" data-i18n="aboutTitle">Sobre mim</h2><span></span></div>
-        <div class="intro"><p data-i18n="aboutP1">Sou Marcos Aurélio e estudo Engenharia de Software na Universidade Católica de Brasília. Gosto de programar e de pensar em como as pessoas vão usar o que desenvolvo.</p><p data-i18n="aboutP2">Trabalhei com suporte de TI na Viveo, atendendo usuários e acompanhando chamados. Também estudo desenvolvimento de software, backend e segurança da informação.</p></div>
+        <div class="intro"><p data-i18n="aboutP1">Sou Marcos Aurélio e estudo Engenharia de Software na Universidade Católica de Brasília. Gosto de programar e de pensar em como as pessoas vão usar o que desenvolvo.</p><p data-i18n="aboutP2">Trabalho com suporte de TI na Viveo, atendendo usuários e acompanhando chamados. Também estudo desenvolvimento de software, backend e segurança da informação.</p></div>
         <h3 class="subheading" data-i18n="whatIDo">O que eu faço</h3>
         <div class="feature-grid">
           <article class="feature-card"><span class="feature-icon" aria-hidden="true"><svg><use href="#icon-code"/></svg></span><div><h4 data-i18n="featureDevTitle">Desenvolvimento de software</h4><p data-i18n="featureDevText">Projetos em Java, C, C# e Python.</p></div></article>
@@ -100,7 +122,7 @@
       <section class="panel" id="experiencia" aria-labelledby="experience-title" hidden>
         <div class="section-title"><h2 id="experience-title" data-i18n="experienceTitle">Experiência</h2><span></span></div>
         <h3 class="subheading with-icon"><span aria-hidden="true"><svg><use href="#icon-briefcase"/></svg></span><span data-i18n="workTitle">Experiência profissional</span></h3>
-        <ol class="timeline"><li><h4 data-i18n="experienceRole">Estagiário em TI · Analista de Suporte N1</h4><span>Viveo · CM Hospitalar <b data-i18n="experiencePeriod">Ago 2025 — Ago 2026</b></span><p data-i18n="experienceDescription">Atendimento presencial e remoto, triagem e acompanhamento de chamados, diagnóstico de incidentes e suporte à configuração de estações de trabalho, sistemas e periféricos.</p></li></ol>
+        <ol class="timeline"><li><h4 data-i18n="experienceRole">Estagiário em TI · Analista de Suporte N1</h4><span>Viveo · CM Hospitalar <b data-i18n="experiencePeriod">Ago 2025 — no momento</b></span><p data-i18n="experienceDescription">Atendimento presencial e remoto, triagem e acompanhamento de chamados, diagnóstico de incidentes e suporte à configuração de estações de trabalho, sistemas e periféricos.</p></li></ol>
         <h3 class="subheading with-icon"><span aria-hidden="true"><svg><use href="#icon-graduation"/></svg></span><span data-i18n="educationTitle">Formação</span></h3>
         <ol class="timeline">
           <li>

@@ -6,7 +6,7 @@ const translations = {
     navAbout: "Sobre", navExperience: "Experiência", navProjects: "Projetos", navContact: "Contato",
     aboutTitle: "Sobre mim",
     aboutP1: "Sou Marcos Aurélio e estudo Engenharia de Software na Universidade Católica de Brasília. Gosto de programar e de pensar em como as pessoas vão usar o que desenvolvo.",
-    aboutP2: "Trabalhei com suporte de TI na Viveo, atendendo usuários e acompanhando chamados. Também estudo desenvolvimento de software, backend e segurança da informação.",
+    aboutP2: "Trabalho com suporte de TI na Viveo, atendendo usuários e acompanhando chamados. Também estudo desenvolvimento de software, backend e segurança da informação.",
     downloadResume: "Baixar currículo",
     whatIDo: "O que eu faço", skillsTitle: "Tecnologias e ferramentas",
     skillsLanguages: "Linguagens e web", skillsInterfaces: "Frameworks e interfaces",
@@ -20,7 +20,7 @@ const translations = {
     schoolTitle: "Ensino Fundamental e Médio",
     schoolDescription: "Estudei no Colégio Militar de Brasília, concluindo o ensino fundamental e o ensino médio.",
     workTitle: "Experiência profissional", experienceRole: "Estagiário em TI · Analista de Suporte N1",
-    experiencePeriod: "Ago 2025 — Ago 2026",
+    experiencePeriod: "Ago 2025 — no momento",
     experienceDescription: "Atendimento presencial e remoto, triagem e acompanhamento de chamados, diagnóstico de incidentes e suporte à configuração de estações de trabalho, sistemas e periféricos.",
     focusTitle: "Áreas de interesse", security: "Segurança da informação", softwareDevelopment: "Desenvolvimento de software",
     languagesTitle: "Idiomas", englishLevel: "Inglês · B2",
@@ -39,7 +39,7 @@ const translations = {
     navAbout: "About", navExperience: "Experience", navProjects: "Projects", navContact: "Contact",
     aboutTitle: "About me",
     aboutP1: "I'm Marcos Aurélio, a Software Engineering student at the Catholic University of Brasília. I enjoy programming and thinking about how people will use what I build.",
-    aboutP2: "I worked in IT support at Viveo, helping users and tracking support tickets. I also study software development, backend and information security.",
+    aboutP2: "I work in IT support at Viveo, helping users and tracking support tickets. I also study software development, backend and information security.",
     downloadResume: "Download resume",
     whatIDo: "What I do", skillsTitle: "Technologies and tools",
     skillsLanguages: "Languages and web", skillsInterfaces: "Frameworks and interfaces",
@@ -53,7 +53,7 @@ const translations = {
     schoolTitle: "Elementary and High School",
     schoolDescription: "I studied at Colégio Militar de Brasília, completing both elementary and high school.",
     workTitle: "Professional experience", experienceRole: "IT Intern · Level 1 Support Analyst",
-    experiencePeriod: "Aug 2025 — Aug 2026",
+    experiencePeriod: "Aug 2025 — Present",
     experienceDescription: "On-site and remote support, ticket triage and follow-up, incident diagnosis, and help configuring workstations, systems and peripherals.",
     focusTitle: "Areas of interest", security: "Information security", softwareDevelopment: "Software development",
     languagesTitle: "Languages", englishLevel: "English · B2",
@@ -68,6 +68,23 @@ const translations = {
 };
 
 const projects = [
+  {
+    title: { pt: "Conversor de Moedas", en: "Currency Converter" },
+    description: {
+      pt: "Aplicação Java com API REST para conversão de moedas, gráficos de cotações e histórico por sessão.",
+      en: "Java application with a REST API for currency conversion, exchange-rate charts and session history.",
+    },
+    tags: { pt: "Java · Spring Boot · JPA · Thymeleaf · H2 · PostgreSQL", en: "Java · Spring Boot · JPA · Thymeleaf · H2 · PostgreSQL" },
+    website: "https://conversor-de-moedas.pages.dev/",
+    repository: "https://github.com/MarcosAAurelio/Conversor-de-moedas",
+    images: [
+      { src: "assets/projects/conversor-escuro.png", alt: { pt: "Conversor de moedas no tema escuro", en: "Currency converter in dark theme" } },
+      { src: "assets/projects/conversor-sobre-claro.png", alt: { pt: "Página Sobre do conversor no tema claro", en: "Converter About page in light theme" } },
+      { src: "assets/projects/conversor-historico-claro.png", alt: { pt: "Histórico de conversões no tema claro", en: "Conversion history in light theme" } },
+      { src: "assets/projects/conversor-mobile-escuro.png", alt: { pt: "Conversor de moedas no celular, no tema escuro", en: "Mobile currency converter in dark theme" } },
+    ],
+  },
+
   {
     title: { pt: "Análise do Brasileirão", en: "Brasileirão Analysis" },
     description: {
@@ -86,15 +103,7 @@ const projects = [
     tags: { pt: "Java · JavaFX · MVC", en: "Java · JavaFX · MVC" },
     symbol: "JFX", color: "linear-gradient(135deg, #51436f, #262139)",
   },
-  {
-    title: { pt: "Conversor de Moedas", en: "Currency Converter" },
-    description: {
-      pt: "Utilitário em C com estruturas de dados, alocação dinâmica, ponteiros e algoritmos.",
-      en: "C utility using data structures, dynamic allocation, pointers and algorithms.",
-    },
-    tags: { pt: "C · Estruturas de Dados", en: "C · Data Structures" },
-    symbol: "C$", color: "linear-gradient(135deg, #814c47, #3a2427)",
-  },
+
 ];
 
 const root = document.documentElement;
@@ -162,6 +171,51 @@ function updateContactsLabel() {
   expandButton.querySelector("span").textContent = label;
 }
 
+const projectImageDialog = document.createElement("dialog");
+projectImageDialog.className = "project-image-dialog";
+const enlargedProjectImage = document.createElement("img");
+const closeProjectImage = document.createElement("button");
+closeProjectImage.type = "button";
+closeProjectImage.className = "project-image-close";
+closeProjectImage.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>';
+const previousProjectImage = document.createElement("button");
+const nextProjectImage = document.createElement("button");
+const enlargedImageStatus = document.createElement("span");
+enlargedImageStatus.className = "project-zoom-status";
+enlargedImageStatus.setAttribute("aria-live", "polite");
+previousProjectImage.type = nextProjectImage.type = "button";
+previousProjectImage.className = "project-zoom-nav project-zoom-previous";
+nextProjectImage.className = "project-zoom-nav project-zoom-next";
+previousProjectImage.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>';
+nextProjectImage.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
+let moveEnlargedImage = null;
+let enlargedImageRequest = 0;
+previousProjectImage.addEventListener("click", (event) => {
+  event.stopPropagation();
+  moveEnlargedImage?.(-1);
+});
+nextProjectImage.addEventListener("click", (event) => {
+  event.stopPropagation();
+  moveEnlargedImage?.(1);
+});
+projectImageDialog.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    moveEnlargedImage?.(event.key === "ArrowLeft" ? -1 : 1);
+  }
+});
+projectImageDialog.append(closeProjectImage, enlargedProjectImage, previousProjectImage, nextProjectImage, enlargedImageStatus);
+document.body.append(projectImageDialog);
+closeProjectImage.addEventListener("click", () => projectImageDialog.close());
+projectImageDialog.addEventListener("click", (event) => {
+  if (event.target === projectImageDialog) projectImageDialog.close();
+});
+projectImageDialog.addEventListener("close", () => {
+  root.classList.remove("project-image-open");
+  enlargedImageRequest++;
+  moveEnlargedImage = null;
+});
+
 function renderProjects() {
   const grid = document.querySelector("#project-grid");
   grid.replaceChildren(...projects.map((project) => {
@@ -169,10 +223,94 @@ function renderProjects() {
     article.className = "project-card";
     const art = document.createElement("div");
     art.className = "project-art";
-    art.style.setProperty("--project-bg", project.color);
-    const symbol = document.createElement("span");
-    symbol.textContent = project.symbol;
-    art.append(symbol);
+    if (project.images?.length) {
+      art.classList.add("project-gallery");
+      const image = document.createElement("img");
+      image.className = "project-image";
+      image.loading = "lazy";
+      const zoom = document.createElement("button");
+      zoom.type = "button";
+      zoom.className = "project-image-zoom";
+      zoom.setAttribute("aria-haspopup", "dialog");
+      zoom.setAttribute("aria-label", language === "pt" ? "Ampliar imagem do projeto" : "Enlarge project image");
+      zoom.append(image);
+      zoom.addEventListener("click", () => {
+        moveEnlargedImage = moveImage;
+        showEnlargedImage();
+        for (const photo of project.images) {
+          const preload = new Image();
+          preload.src = photo.src;
+        }
+        closeProjectImage.setAttribute("aria-label", language === "pt" ? "Fechar imagem ampliada" : "Close enlarged image");
+        previousProjectImage.setAttribute("aria-label", language === "pt" ? "Foto anterior" : "Previous photo");
+        nextProjectImage.setAttribute("aria-label", language === "pt" ? "Próxima foto" : "Next photo");
+        previousProjectImage.hidden = nextProjectImage.hidden = project.images.length < 2;
+        projectImageDialog.showModal();
+        root.classList.add("project-image-open");
+      });
+      let currentImage = 0;
+      const status = document.createElement("span");
+      status.className = "project-image-status";
+      status.setAttribute("aria-live", "polite");
+      const showEnlargedImage = async () => {
+        const request = ++enlargedImageRequest;
+        const photo = project.images[currentImage];
+        const position = currentImage;
+        const readyImage = new Image();
+        readyImage.src = photo.src;
+        try {
+          await readyImage.decode();
+        } catch {
+          // Keep the current image visible if the next file cannot be loaded.
+          return;
+        }
+        if (request !== enlargedImageRequest) return;
+        enlargedProjectImage.src = photo.src;
+        enlargedProjectImage.alt = photo.alt[language];
+        projectImageDialog.setAttribute("aria-label", photo.alt[language]);
+        enlargedImageStatus.textContent = `${position + 1} / ${project.images.length}`;
+      };
+      const showImage = () => {
+        image.src = project.images[currentImage].src;
+        image.alt = project.images[currentImage].alt[language];
+        status.textContent = `${currentImage + 1} / ${project.images.length}`;
+      };
+      const moveImage = (direction) => {
+        currentImage = (currentImage + direction + project.images.length) % project.images.length;
+        showImage();
+        if (projectImageDialog.open) showEnlargedImage();
+      };
+      showImage();
+      art.append(zoom);
+      const links = document.createElement("div");
+      links.className = "project-links";
+      for (const [url, label] of [
+        [project.website, language === "pt" ? "Ver site" : "Live site"],
+        [project.repository, "GitHub"],
+      ]) {
+        const link = document.createElement("a");
+        link.href = url;
+        link.textContent = label;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        links.append(link);
+      }
+      art.append(links);
+      if (project.images.length > 1) {
+        const next = document.createElement("button");
+        next.type = "button";
+        next.className = "project-next";
+        next.setAttribute("aria-label", language === "pt" ? "Próxima foto do Conversor de Moedas" : "Next Currency Converter photo");
+        next.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
+        next.addEventListener("click", () => moveImage(1));
+        art.append(next, status);
+      }
+    } else {
+      art.style.setProperty("--project-bg", project.color);
+      const symbol = document.createElement("span");
+      symbol.textContent = project.symbol;
+      art.append(symbol);
+    }
     const title = document.createElement("h3");
     title.textContent = project.title[language];
     const description = document.createElement("p");
@@ -271,6 +409,12 @@ function activatePanel(id, updateHash = true) {
   if (updateHash) history.replaceState(null, "", `#${id}`);
   window.scrollTo({ top: 0, behavior: "instant" });
 }
+
+const siteBrand = document.querySelector(".site-brand");
+siteBrand.addEventListener("click", (event) => {
+  event.preventDefault();
+  activatePanel("sobre");
+});
 
 tabLinks.forEach((link) => link.addEventListener("click", (event) => {
   event.preventDefault();

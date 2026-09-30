@@ -83,6 +83,13 @@ h1, h2, h3, h4, p { margin-top: 0; }
   100% { opacity: 0; transform: scaleX(1); }
 }
 .content-header { display: flex; align-items: center; gap: 8px; width: max-content; max-width: calc(100% - 40px); margin: 18px 20px 22px auto; padding: 6px; border: 1px solid var(--line); border-radius: 16px; background: var(--card-alt); }
+.site-brand { display: grid; place-items: center; flex: 0 0 72px; min-height: 44px; color: var(--text); }
+.site-brand svg { width: 64px; height: 30px; fill: none; stroke: currentColor; stroke-width: 8; }
+.brand-shimmer { transform: translateX(-80px); opacity: .65; pointer-events: none; animation: brand-shimmer-sweep 2s linear infinite; }
+@keyframes brand-shimmer-sweep {
+  0% { transform: translateX(-80px); }
+  65%, 100% { transform: translateX(120px); }
+}
 .tabs { display: flex; align-items: center; gap: 2px; }
 .tabs a { position: relative; display: grid; place-items: center; min-height: 42px; padding: 0 15px; border-radius: 10px; color: var(--text); font-weight: 600; font-size: 14px; transition: color .25s, background .25s; }
 .tabs a::after { position: absolute; right: 15px; bottom: 3px; left: 15px; height: 3px; border-radius: 3px; background: var(--accent); content: ""; transform: scaleX(0); transition: transform .3s cubic-bezier(.2, .8, .2, 1); }
@@ -151,6 +158,31 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .project-card h3 { margin: 13px 0 3px; font: 600 17px "Poppins", sans-serif; }
 .project-card p { margin-bottom: 9px; color: var(--muted); font-size: 13px; }
 .project-tags { color: var(--accent); font-size: 12px; }
+.project-gallery::before, .project-gallery::after { content: none; }
+.project-image-zoom { width: 100%; height: 100%; min-height: 0; padding: 0; border: 0; background: transparent; cursor: zoom-in; overflow: hidden; }
+.project-image-zoom:focus-visible { outline-offset: -4px; }
+.project-image-open { overflow: hidden; }
+.project-image-dialog { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 56px 20px 20px; border: 0; background: transparent; }
+.project-image-dialog[open] { display: grid; place-items: center; }
+.project-image-dialog::backdrop { background: rgba(0, 0, 0, .88); }
+.project-image-dialog > img { display: block; width: 100%; height: calc(100dvh - 76px); min-width: 0; min-height: 0; object-fit: contain; }
+.project-image-close { position: absolute; top: 8px; right: 12px; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); }
+.project-image-close:hover { color: var(--accent); }
+.project-zoom-nav { position: absolute; top: calc(50% - 22px); display: grid; place-items: center; width: 44px; height: 44px; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); }
+.project-zoom-nav[hidden] { display: none; }
+.project-zoom-nav:hover { color: var(--accent); border-color: var(--accent); }
+.project-zoom-previous { left: 12px; }
+.project-zoom-next { right: 12px; }
+.project-zoom-status { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); padding: 3px 10px; border-radius: 8px; background: var(--card); color: var(--text); font-size: 12px; font-variant-numeric: tabular-nums; }
+.project-image { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: top; }
+.project-links { position: absolute; left: 10px; bottom: 10px; display: flex; gap: 6px; }
+.project-links a, .project-next, .project-image-status { border: 1px solid var(--line); background: var(--card); color: var(--text); border-radius: 8px; }
+.project-links a { display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font-size: 12px; font-weight: 600; }
+.project-next { position: absolute; right: 10px; top: calc(50% - 22px); display: grid; place-items: center; width: 44px; height: 44px; padding: 10px; }
+.project-next svg { width: 22px; height: 22px; }
+.project-next:hover, .project-links a:hover { color: var(--accent); border-color: var(--accent); }
+.project-next:focus-visible, .project-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.project-image-status { position: absolute; right: 10px; bottom: 10px; padding: 3px 8px; font-size: 11px; font-variant-numeric: tabular-nums; }
 .text-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 34px; color: var(--accent); font-weight: 600; }
 .text-link svg, .primary-link svg, .contact-methods svg { width: 16px; height: 16px; flex: none; }
 .contact-panel { display: flex; gap: 26px; align-items: center; padding: 30px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(135deg, var(--card-alt), var(--card)); }
@@ -196,7 +228,8 @@ footer { width: min(1240px, calc(100% - 64px)); margin: 25px auto 50px; color: v
   .profile-expand { padding: 7px; }
   .contact-list { grid-template-columns: 1fr; gap: 16px; }
   .content-card { min-height: 650px; }
-  .content-header { display: grid; grid-template-areas: "controls" "tabs"; gap: 6px; width: auto; max-width: none; margin: 12px 12px 0; }
+  .content-header { display: grid; grid-template-areas: "brand controls" "tabs tabs"; grid-template-columns: 1fr auto; gap: 6px; width: auto; max-width: none; margin: 12px 12px 0; }
+  .site-brand { grid-area: brand; justify-self: start; padding: 0 8px; }
   .preferences { grid-area: controls; justify-self: end; padding: 0; border: 0; }
   .tabs { grid-area: tabs; justify-content: space-between; gap: 0; padding-top: 6px; border-top: 1px solid var(--line); }
   .tabs a { min-height: 44px; padding: 0 5px; font-size: clamp(11px, 3vw, 12px); }
@@ -211,6 +244,7 @@ footer { width: min(1240px, calc(100% - 64px)); margin: 25px auto 50px; color: v
   .contact-art svg { width: 40px; height: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .brand-shimmer { animation: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .content-card.is-switching::before, .panel.visible > * { animation: none; }
