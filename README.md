@@ -31,11 +31,11 @@ Este é meu portfólio pessoal. Reuni nele minha experiência em suporte de TI, 
 
 ## Capturas de tela
 
+As capturas mostram a interface atual, incluindo os cards de projetos com galeria de imagens. As versões de desktop foram capturadas com largura de 1440 px; a versão para celular, com 390 px.
+
 | Experiência | Projetos |
 | :---: | :---: |
 | ![Aba Experiência em tema escuro](assets/screenshots/02-experiencia.png) | ![Aba Projetos em tema escuro](assets/screenshots/03-projetos.png) |
-
-> A captura da aba Projetos mostra a versão anterior dos cards.
 
 | Contato · tema claro | About · English |
 | :---: | :---: |
