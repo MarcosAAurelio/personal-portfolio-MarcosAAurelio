@@ -35,6 +35,8 @@ Este é meu portfólio pessoal. Reuni nele minha experiência em suporte de TI, 
 | :---: | :---: |
 | ![Aba Experiência em tema escuro](assets/screenshots/02-experiencia.png) | ![Aba Projetos em tema escuro](assets/screenshots/03-projetos.png) |
 
+> A captura da aba Projetos mostra a versão anterior dos cards.
+
 | Contato · tema claro | About · English |
 | :---: | :---: |
 | ![Aba Contato em tema claro](assets/screenshots/04-contato-claro.png) | ![Aba About em inglês](assets/screenshots/06-about-english.png) |
@@ -58,9 +60,8 @@ Este é meu portfólio pessoal. Reuni nele minha experiência em suporte de TI, 
 
 | Projeto | Tecnologias | Descrição |
 | --- | --- | --- |
-| Análise do Brasileirão | Java, CSV, algoritmos | Leitura de dados de partidas e cálculo de pontuação, saldo de gols e estatísticas. |
-| Aplicação Desktop | Java, JavaFX, MVC | Interface desktop modular com tratamento de eventos. |
-| Conversor de Moedas | C, estruturas de dados | Utilitário com ponteiros, alocação dinâmica e algoritmos. |
+| [Conversor de Moedas](https://github.com/MarcosAAurelio/Conversor-de-moedas) | Java, Spring Boot, JPA, Thymeleaf, H2, PostgreSQL | Conversão de moedas com API REST, gráficos de cotações e histórico por sessão. |
+| [Calculadora POO](https://github.com/MarcosAAurelio/Calculadora_POO) | Java, Swing, POO | Calculadora desktop com operações básicas e tratamento de entradas inválidas. |
 
 ## Como executar
 

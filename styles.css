@@ -41,7 +41,9 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .profile-card, .content-card { border: 1px solid var(--line); border-radius: 22px; background: var(--card); box-shadow: var(--shadow); }
 .profile-card { position: sticky; top: 28px; padding: 32px 26px; }
 .profile-top { display: flex; align-items: center; flex-direction: column; text-align: center; }
-.avatar { position: relative; display: grid; place-items: center; width: 148px; height: 148px; margin: 0 auto 22px; overflow: hidden; border: 2px solid var(--accent); border-radius: 24px; background: linear-gradient(145deg, #383735, #222324 70%); padding: 0; cursor: zoom-in; }
+@property --avatar-border-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.avatar { position: relative; display: grid; place-items: center; width: 148px; height: 148px; margin: 0 auto 22px; overflow: hidden; border: 2px solid transparent; border-radius: 24px; background: linear-gradient(145deg, #383735, #222324 70%) padding-box, conic-gradient(from var(--avatar-border-angle), #d9a441 0deg 280deg, #f5ca71 305deg, #fff8d9 325deg, #f5ca71 345deg, #d9a441 360deg) border-box; padding: 0; cursor: zoom-in; animation: avatar-border-sweep 4s linear infinite; }
+@keyframes avatar-border-sweep { to { --avatar-border-angle: 360deg; } }
 .avatar::before { position: absolute; content: ""; width: 190px; height: 100px; left: -25px; bottom: -64px; border-radius: 50%; background: #e8aa62; transform: rotate(-18deg); opacity: .9; }
 .avatar::after { position: absolute; content: ""; width: 112px; height: 112px; right: -60px; top: -60px; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; }
 .avatar-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; display: block; opacity: 0; transition: opacity .2s ease; }
@@ -85,7 +87,7 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .content-header { display: flex; align-items: center; gap: 8px; width: max-content; max-width: calc(100% - 40px); margin: 18px 20px 22px auto; padding: 6px; border: 1px solid var(--line); border-radius: 16px; background: var(--card-alt); }
 .site-brand { display: grid; place-items: center; flex: 0 0 72px; min-height: 44px; color: var(--text); }
 .site-brand svg { width: 64px; height: 30px; fill: none; stroke: currentColor; stroke-width: 8; }
-.brand-shimmer { transform: translateX(-80px); opacity: .65; pointer-events: none; animation: brand-shimmer-sweep 2s linear infinite; }
+.brand-shimmer { transform: translateX(-80px); opacity: .85; pointer-events: none; animation: brand-shimmer-sweep 2.5s linear infinite; }
 @keyframes brand-shimmer-sweep {
   0% { transform: translateX(-80px); }
   65%, 100% { transform: translateX(120px); }
@@ -153,7 +155,7 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .project-art { position: relative; display: grid; height: 190px; place-items: center; overflow: hidden; border-radius: 15px; background: var(--project-bg); color: rgba(255,255,255,.95); }
 .project-art::before, .project-art::after { position: absolute; content: ""; width: 180px; height: 180px; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; }
 .project-art::after { width: 290px; height: 290px; }
-.project-art-icon { z-index: 1; display: grid; place-items: center; width: 94px; height: 94px; border: 1px solid rgba(255,255,255,.3); border-radius: 25px; background: rgba(255,255,255,.1); box-shadow: 0 18px 35px rgba(0,0,0,.1); backdrop-filter: blur(6px); }
+.project-art-icon { z-index: 1; display: grid; place-items: center; width: 94px; height: 94px; border: 1px solid rgba(255,255,255,.3); border-radius: 25px; background: rgba(255,255,255,.1); box-shadow: 0 18px 35px rgba(0,0,0,.1); backdrop-filter: blur(6px); font: 600 42px/1 "Poppins", sans-serif; }
 .project-art-icon svg { width: 50px; height: 50px; stroke-width: 1.5; }
 .project-card h3 { margin: 13px 0 3px; font: 600 17px "Poppins", sans-serif; }
 .project-card p { margin-bottom: 9px; color: var(--muted); font-size: 13px; }
@@ -175,7 +177,7 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .project-zoom-next { right: 12px; }
 .project-zoom-status { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); padding: 3px 10px; border-radius: 8px; background: var(--card); color: var(--text); font-size: 12px; font-variant-numeric: tabular-nums; }
 .project-image { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: top; }
-.project-links { position: absolute; left: 10px; bottom: 10px; display: flex; gap: 6px; }
+.project-links { position: absolute; z-index: 2; left: 10px; bottom: 10px; display: flex; gap: 6px; }
 .project-links a, .project-next, .project-image-status { border: 1px solid var(--line); background: var(--card); color: var(--text); border-radius: 8px; }
 .project-links a { display: inline-flex; align-items: center; min-height: 36px; padding: 6px 10px; font-size: 12px; font-weight: 600; }
 .project-next { position: absolute; right: 10px; top: calc(50% - 22px); display: grid; place-items: center; width: 44px; height: 44px; padding: 10px; }
@@ -245,6 +247,7 @@ footer { width: min(1240px, calc(100% - 64px)); margin: 25px auto 50px; color: v
 }
 @media (prefers-reduced-motion: reduce) {
   .brand-shimmer { animation: none; }
+  .avatar { animation: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .content-card.is-switching::before, .panel.visible > * { animation: none; }

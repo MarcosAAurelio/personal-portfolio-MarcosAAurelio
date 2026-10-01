@@ -5,16 +5,16 @@ const translations = {
     location: "Brasília, DF, Brasil", university: "Universidade Católica de Brasília",
     navAbout: "Sobre", navExperience: "Experiência", navProjects: "Projetos", navContact: "Contato",
     aboutTitle: "Sobre mim",
-    aboutP1: "Sou Marcos Aurélio e estudo Engenharia de Software na Universidade Católica de Brasília. Gosto de programar e de pensar em como as pessoas vão usar o que desenvolvo.",
-    aboutP2: "Trabalho com suporte de TI na Viveo, atendendo usuários e acompanhando chamados. Também estudo desenvolvimento de software, backend e segurança da informação.",
+    aboutP1: "Meu nome é Marcos Aurélio e estudo Engenharia de Software na Universidade Católica de Brasília. Gosto de programar e de pensar em como as pessoas vão usar o que desenvolvo.",
+    aboutP2: "Atualmente atuo com suporte de TI, atendendo usuários e acompanhando chamados. Busco ampliar minha atuação em desenvolvimento full-stack e segurança da informação e estou aberto a novas oportunidades na área de tecnologia.",
     downloadResume: "Baixar currículo",
     whatIDo: "O que eu faço", skillsTitle: "Tecnologias e ferramentas",
     skillsLanguages: "Linguagens e web", skillsInterfaces: "Frameworks e interfaces",
     skillsDataCloud: "Dados e nuvem", skillsTools: "Ferramentas",
-    featureDevTitle: "Desenvolvimento de software", featureDevText: "Projetos em Java, C, C# e Python.",
+    featureDevTitle: "Desenvolvimento de software", featureDevText: "Projetos em Java, C, JavaScript, C# e SQL.",
     featureSupportTitle: "Suporte de TI", featureSupportText: "Diagnóstico de incidentes, atendimento e acompanhamento de chamados.",
     featureDataTitle: "Dados e lógica", featureDataText: "Uso SQL e algoritmos para organizar dados e resolver problemas.",
-    featureLearnTitle: "Aprendizado contínuo", featureLearnText: "Estudo backend, segurança da informação e práticas de engenharia de software.",
+    featureLearnTitle: "Aprendizado contínuo", featureLearnText: "Sou desenvolvedor full-stack e estudo segurança da informação e práticas de engenharia de software.",
     experienceTitle: "Experiência", educationTitle: "Formação", degree: "Engenharia de Software",
     degreeDescription: "4º semestre da graduação, com estudos em programação, estruturas de dados e desenvolvimento de sistemas.",
     schoolTitle: "Ensino Fundamental e Médio",
@@ -24,7 +24,7 @@ const translations = {
     experienceDescription: "Atendimento presencial e remoto, triagem e acompanhamento de chamados, diagnóstico de incidentes e suporte à configuração de estações de trabalho, sistemas e periféricos.",
     focusTitle: "Áreas de interesse", security: "Segurança da informação", softwareDevelopment: "Desenvolvimento de software",
     languagesTitle: "Idiomas", englishLevel: "Inglês · B2",
-    projectsTitle: "Projetos", projectsLead: "Projetos acadêmicos que desenvolvi em Java, JavaFX e C.",
+    projectsTitle: "Projetos", projectsLead: "Projetos em Java com aplicações web e desktop.",
     allGitHub: "Ver meu perfil no GitHub",
     contactTitle: "Contato", contactLead: "Tenho interesse em estágios e vagas de desenvolvimento de software. Também gosto de conversar sobre tecnologia.",
     getInTouch: "Entre em contato", contactPrompt: "Escolha o canal que preferir. Responderei assim que possível.",
@@ -38,16 +38,16 @@ const translations = {
     location: "Brasília, DF, Brazil", university: "Catholic University of Brasília",
     navAbout: "About", navExperience: "Experience", navProjects: "Projects", navContact: "Contact",
     aboutTitle: "About me",
-    aboutP1: "I'm Marcos Aurélio, a Software Engineering student at the Catholic University of Brasília. I enjoy programming and thinking about how people will use what I build.",
-    aboutP2: "I work in IT support at Viveo, helping users and tracking support tickets. I also study software development, backend and information security.",
+    aboutP1: "My name is Marcos Aurélio, and I'm a Software Engineering student at the Catholic University of Brasília. I enjoy programming and thinking about how people will use what I build.",
+    aboutP2: "I currently work in IT support, helping users and tracking support tickets. I'm looking to expand my work in full-stack development and information security and am open to new opportunities in technology.",
     downloadResume: "Download resume",
     whatIDo: "What I do", skillsTitle: "Technologies and tools",
     skillsLanguages: "Languages and web", skillsInterfaces: "Frameworks and interfaces",
     skillsDataCloud: "Data and cloud", skillsTools: "Tools",
-    featureDevTitle: "Software development", featureDevText: "Projects in Java, C, C# and Python.",
+    featureDevTitle: "Software development", featureDevText: "Projects in Java, C, JavaScript, C# and SQL.",
     featureSupportTitle: "IT support", featureSupportText: "Incident diagnosis, user support and ticket follow-up.",
     featureDataTitle: "Data and logic", featureDataText: "I use SQL and algorithms to organize data and solve problems.",
-    featureLearnTitle: "Continuous learning", featureLearnText: "I study backend, information security and software engineering practices.",
+    featureLearnTitle: "Continuous learning", featureLearnText: "I'm a full-stack developer and study information security and software engineering practices.",
     experienceTitle: "Experience", educationTitle: "Education", degree: "Software Engineering",
     degreeDescription: "Fourth semester of the degree, studying programming, data structures and systems development.",
     schoolTitle: "Elementary and High School",
@@ -57,7 +57,7 @@ const translations = {
     experienceDescription: "On-site and remote support, ticket triage and follow-up, incident diagnosis, and help configuring workstations, systems and peripherals.",
     focusTitle: "Areas of interest", security: "Information security", softwareDevelopment: "Software development",
     languagesTitle: "Languages", englishLevel: "English · B2",
-    projectsTitle: "Projects", projectsLead: "Academic projects I've built in Java, JavaFX and C.",
+    projectsTitle: "Projects", projectsLead: "Java projects covering web and desktop applications.",
     allGitHub: "Visit my GitHub profile",
     contactTitle: "Contact", contactLead: "I'm interested in internships and software development roles. I'm also happy to talk about technology.",
     getInTouch: "Get in touch", contactPrompt: "Choose your preferred channel. I'll respond as soon as I can.",
@@ -86,22 +86,14 @@ const projects = [
   },
 
   {
-    title: { pt: "Análise do Brasileirão", en: "Brasileirão Analysis" },
+    title: { pt: "Calculadora POO", en: "OOP Calculator" },
     description: {
-      pt: "Aplicação Java para leitura de CSV, cálculo de pontuação, saldo de gols e estatísticas de desempenho.",
-      en: "Java application for reading CSV files and calculating points, goal difference and performance statistics.",
+      pt: "Calculadora desktop em Java Swing com operações básicas, separação entre interface e cálculos e tratamento de entradas inválidas.",
+      en: "Java Swing desktop calculator with basic operations, separate interface and calculation logic, and invalid input handling.",
     },
-    tags: { pt: "Java · CSV · Algoritmos", en: "Java · CSV · Algorithms" },
-    symbol: "BR", color: "linear-gradient(135deg, #235743, #0c2a24)",
-  },
-  {
-    title: { pt: "Aplicação Desktop", en: "Desktop Application" },
-    description: {
-      pt: "Sistema desktop modular com interface JavaFX, padrão MVC e manipulação de eventos.",
-      en: "Modular desktop application with a JavaFX interface, MVC pattern and event handling.",
-    },
-    tags: { pt: "Java · JavaFX · MVC", en: "Java · JavaFX · MVC" },
-    symbol: "JFX", color: "linear-gradient(135deg, #51436f, #262139)",
+    tags: { pt: "Java · Swing · POO", en: "Java · Swing · OOP" },
+    repository: "https://github.com/MarcosAAurelio/Calculadora_POO",
+    symbol: "±", color: "linear-gradient(135deg, #51436f, #262139)",
   },
 
 ];
@@ -282,20 +274,6 @@ function renderProjects() {
       };
       showImage();
       art.append(zoom);
-      const links = document.createElement("div");
-      links.className = "project-links";
-      for (const [url, label] of [
-        [project.website, language === "pt" ? "Ver site" : "Live site"],
-        [project.repository, "GitHub"],
-      ]) {
-        const link = document.createElement("a");
-        link.href = url;
-        link.textContent = label;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        links.append(link);
-      }
-      art.append(links);
       if (project.images.length > 1) {
         const next = document.createElement("button");
         next.type = "button";
@@ -308,8 +286,26 @@ function renderProjects() {
     } else {
       art.style.setProperty("--project-bg", project.color);
       const symbol = document.createElement("span");
+      symbol.className = "project-art-icon";
       symbol.textContent = project.symbol;
       art.append(symbol);
+    }
+    if (project.website || project.repository) {
+      const links = document.createElement("div");
+      links.className = "project-links";
+      for (const [url, label] of [
+        [project.website, language === "pt" ? "Ver site" : "Live site"],
+        [project.repository, "GitHub"],
+      ]) {
+        if (!url) continue;
+        const link = document.createElement("a");
+        link.href = url;
+        link.textContent = label;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        links.append(link);
+      }
+      art.append(links);
     }
     const title = document.createElement("h3");
     title.textContent = project.title[language];
